@@ -5,6 +5,54 @@
  Author URI:   https://github.com/Bahiya68/nathaliemota.git
  Text Domain:  nathaliemota
 */
+header {
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+}
+header .siteNavigation {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+header .siteNavigation .siteNavigationlogo img {
+  width: 216px;
+}
+header a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+
+.site_header {
+  display: flex;
+  flex-direction: row;
+  gap: 60px;
+}
+
+.footer {
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 0;
+  font-family: "font-family", Space Mono;
+  font-size: 16px;
+  line-height: 24px;
+}
+.footer a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+.footer a:hover {
+  font-weight: 700;
+}
+.footer ul {
+  display: none;
+}
+
 @font-face {
   font-family: "PoppinsBold";
   src: url("../fonts/Poppins-Bold.woff") format("woff"), url("../fonts/Poppins-Bold.woff2") format("woff2");

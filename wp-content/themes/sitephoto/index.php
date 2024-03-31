@@ -1,3 +1,6 @@
-<?php get_header() ?>
-Bonjour le monde
-<?php get_footer() ?>
+<!-- permet d’appeler le fichier d’en-tête -->
+<?php get_header(); ?>
+<?php
+wp_title();
+?>
+<?php get_footer(); ?>
