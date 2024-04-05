@@ -6,10 +6,23 @@ function sitephoto_supports()
     add_theme_support('post-thumbnails');
     // Ajouter automatiquement le titre du site dans l'en-tête du site
     add_theme_support('title-tag');
-    // Ajout d'une fonction permettant de gérer les menus depuis WP
-    register_nav_menu('header', 'En tête du menu');
-    register_nav_menu('footer', 'Pied de page');
 }
+
+add_action('after_setup_theme', 'sitephoto_supports');
+
+// Ajout d'une fonction permettant de gérer les menus depuis WP
+function enregistrement_nav_menus()
+{
+    register_nav_menus(
+        array(
+            'mainmenu' => esc_html__('En tête', 'mota'),
+            'footermenu' => esc_html__('Pied de page', 'mota'),
+        )
+    );
+}
+add_action('after_setup_theme', 'enregistrement_nav_menus');
+
+
 function sitephoto_register_assets()
 {
     // Chargement du style.css du thème
@@ -25,7 +38,4 @@ function sitephoto_register_assets()
     //wp_enqueue_script('bootstrap');
 }
 
-
-
-add_action('after_setup_theme', 'sitephoto_supports');
 add_action('wp_enqueue_scripts', 'sitephoto_register_assets');

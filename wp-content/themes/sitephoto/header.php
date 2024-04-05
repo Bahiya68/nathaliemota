@@ -17,19 +17,19 @@
 
     <header class="site_header">
         <nav id="site_navigation" class="siteNavigation" role="navigation">
-            <div class="siteNavigationlogo">
+            <div class="siteNavigation__logo">
                 <!-- ramène à l’accueil du site grâce à la fonction home_url() -->
                 <a href="<?php echo home_url('/'); ?>">
                     <img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/nathalieMotaLogo.png'; ?>" alt="Logo">
                 </a>
             </div>
-            <div class="siteNavigationMenu">
+            <div class="siteNavigation__menu">
                 <?php
                 wp_nav_menu(
                     array(
-                        'theme_location' => 'main',
+                        'theme_location' => 'mainmenu',
                         'container' => 'false', // On retire le conteneur généré par WP
-                        'menu_class' => 'site_header', // ma classe personnalisée 
+                        'menu_class' => 'navMenu', // ma classe personnalisée 
                     )
                 );
                 ?>

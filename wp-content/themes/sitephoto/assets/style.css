@@ -7,31 +7,42 @@
 */
 header {
   height: 80px;
-  display: flex;
-  flex-direction: row;
+  background-color: white;
 }
 header .siteNavigation {
   width: 100%;
   display: flex;
+  align-items: center;
   flex-direction: row;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
-header .siteNavigation .siteNavigationlogo img {
+header .siteNavigation .siteNavigation__logo img {
   width: 216px;
+  align-items: center;
+  margin-left: 145px;
 }
-header a {
+header .siteNavigation .siteNavigation__menu {
+  margin-right: 145px;
+}
+header .siteNavigation .siteNavigation__menu .navMenu {
+  display: flex;
+  gap: 30px;
+  list-style-type: none;
+}
+header .siteNavigation .siteNavigation__menu .navMenu li {
+  font-family: "font-family", Space Mono;
+}
+header .siteNavigation .siteNavigation__menu .navMenu li a {
   text-decoration: none;
   color: black;
   cursor: pointer;
 }
-
-.site_header {
-  display: flex;
-  flex-direction: row;
-  gap: 60px;
+header .siteNavigation .siteNavigation__menu .navMenu li a:hover {
+  font-weight: 700;
 }
 
-.footer {
+.footerMenu {
   height: 40px;
   display: flex;
   flex-direction: row;
@@ -40,17 +51,19 @@ header a {
   font-family: "font-family", Space Mono;
   font-size: 16px;
   line-height: 24px;
+  align-items: center;
+  flex-wrap: wrap;
 }
-.footer a {
+.footerMenu li {
+  list-style-type: none;
+}
+.footerMenu li a {
   text-decoration: none;
   color: black;
   cursor: pointer;
 }
-.footer a:hover {
+.footerMenu li a:hover {
   font-weight: 700;
-}
-.footer ul {
-  display: none;
 }
 
 @font-face {
