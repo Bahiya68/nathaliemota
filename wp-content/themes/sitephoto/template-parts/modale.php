@@ -1,14 +1,15 @@
-<div class="popup-overlay">
-    <div class="popup-contact">
-        <div class="popup-titlecontainer">
-            <span class="popup-close"></span>
+<!-- The Modal -->
+<div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close"></span>
+        <div class="boite">
             <img src="<?php echo get_template_directory_uri() . '/assets/images/contactHeader.png'; ?>" alt="contact">
-        </div>
-        <div class="popup-informations">
             <?php
-            // On insère le formulaire
-            echo do_shortcode('[contact-form-7 id="910" title="Formulaire contact"]');
+            // On insère le formulaire de demandes de renseignements
+            echo do_shortcode('[contact-form-7 id="0f07703" title="Modale contact"]');
             ?>
         </div>
+
     </div>
 </div>
