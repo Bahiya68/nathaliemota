@@ -28,6 +28,7 @@ function sitephoto_register_assets()
     // Chargement du style.css du thème
     wp_enqueue_style('theme-style', get_stylesheet_directory_uri() . '/assets/style.css', array(), filemtime(get_stylesheet_directory() . '/assets/style.css'));
     wp_enqueue_script('script', get_theme_file_uri() . '/js/modale.js', array('jquery'), '1.0.0', true);
+    wp_enqueue_script('script', get_theme_file_uri() . '/js/single.js', array('jquery'), '1.0.0', true);
 }
 
 add_action('wp_enqueue_scripts', 'sitephoto_register_assets');

@@ -19,7 +19,8 @@
             <div class="siteNavigation__logo">
                 <!-- ramène à l’accueil du site grâce à la fonction home_url() -->
                 <a href="<?php echo home_url('/'); ?>">
-                    <img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/nathalieMotaLogo.png'; ?>" alt="Logo">
+                    <img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/nathalieMotaLogo.png'; ?>"
+                        alt="Logo">
                 </a>
             </div>
             <div class="siteNavigation__menu">
@@ -36,4 +37,6 @@
 
             </div>
         </nav>
+
+        <?php get_template_part('/template-parts/single');?>
     </header>

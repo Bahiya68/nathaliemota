@@ -3,12 +3,18 @@ var modal = document.getElementById("myModal");
 
 // Get the button that opens the modal
 var btn = document.getElementById("menu-item-14");
+var btn2 = document.getElementById("myBtn");
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks the button, CONTACT
 btn.onclick = function () {
+  modal.style.display = "block";
+};
+
+// When the user clicks the button, CONTACT
+btn2.onclick = function () {
   modal.style.display = "block";
 };
 

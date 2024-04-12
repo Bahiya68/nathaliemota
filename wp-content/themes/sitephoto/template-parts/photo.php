@@ -1,0 +1,45 @@
+<?php
+
+add_action('init', function () {
+    register_post_type('photo', array(
+        'labels' => array(
+            'name' => 'Photos',
+            'singular_name' => 'Photo',
+            'menu_name' => 'Photos',
+            'all_items' => 'Tout les Photos',
+            'edit_item' => 'Modifier Photo',
+            'view_item' => 'Voir Photo',
+            'view_items' => 'Voir Photos',
+            'add_new_item' => 'Ajouter Photo',
+            'add_new' => 'Ajouter Photo',
+            'new_item' => 'Nouveau Photo',
+            'parent_item_colon' => 'Photo parent :',
+            'search_items' => 'Rechercher Photos',
+            'not_found' => 'Aucun photos trouvé',
+            'not_found_in_trash' => 'No photos found in Trash',
+            'archives' => 'Archives des Photo',
+            'attributes' => 'Attributs des Photo',
+            'insert_into_item' => 'Insérer dans photo',
+            'uploaded_to_this_item' => 'Téléversé sur ce photo',
+            'filter_items_list' => 'Filtrer la liste photos',
+            'filter_by_date' => 'Filtrer photos par date',
+            'items_list_navigation' => 'Navigation dans la liste Photos',
+            'items_list' => 'Liste Photos',
+            'item_published' => 'Photo publié.',
+            'item_published_privately' => 'Photo publié en privé.',
+            'item_reverted_to_draft' => 'Photo repassé en brouillon.',
+            'item_scheduled' => 'Photo planifié.',
+            'item_updated' => 'Photo mis à jour.',
+            'item_link' => 'Lien Photo',
+            'item_link_description' => 'Un lien vers un photo.',
+        ),
+        'public' => true,
+        'show_in_rest' => true,
+        'supports' => array(
+            0 => 'title',
+            1 => 'editor',
+            2 => 'thumbnail',
+        ),
+        'delete_with_user' => false,
+    ));
+});

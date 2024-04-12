@@ -6,6 +6,7 @@
  Text Domain:  nathaliemota
 */
 header {
+  width: 1440px;
   height: 80px;
   background-color: white;
 }
@@ -136,13 +137,26 @@ label {
   cursor: pointer;
 }
 
+footer {
+  width: 1440px;
+  height: 65px;
+  position: fixed;
+  bottom: 0;
+  background-color: white;
+  border-top: solid 1px;
+}
+
+body {
+  width: 1440px;
+}
+
 .footerMenu {
   height: 40px;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   padding: 0;
-  font-family: "font-family", Space Mono;
+  font-family: "font-family", "Space Mono";
   font-size: 16px;
   line-height: 24px;
   align-items: center;
@@ -215,4 +229,88 @@ label {
   font-weight: normal;
   font-style: normal;
   font-display: swap;
+}
+section {
+  margin-left: 145px;
+  margin-right: 145px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  font-family: "font-family", "Space Mono";
+  font-weight: 400;
+}
+.info h2 {
+  font-size: 66px;
+  line-height: 58px;
+  font-style: italic;
+}
+.info p {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.photodetail {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.photodetail img {
+  max-width: 563px;
+  max-height: 844px;
+}
+
+.minidiapo {
+  border-bottom: 1px solid black;
+}
+
+#menu-item-14 {
+  font-family: "font-family", "Space Mono";
+  font-size: 16px;
+  cursor: pointer;
+  background-color: white;
+  margin: 0em;
+  padding-block: 0px;
+  padding-inline: 0px;
+  border-width: 0px;
+}
+#menu-item-14:hover {
+  font-weight: 700;
+}
+
+.section_post_contact_nav {
+  height: 120px;
+  display: flex;
+  flex-direction: row;
+  border-top: solid 1px;
+  border-bottom: solid 1px;
+  align-items: center;
+}
+
+#myBtn {
+  width: 272px;
+  height: 50px;
+  background-color: #D8D8D8;
+  border-width: 0px;
+  margin-left: 85px;
+}
+
+.image1 img {
+  width: 565px;
+  max-height: 495px;
+  gap: 40px;
+}
+
+.image2 img {
+  width: 565px;
+  max-height: 495px;
+  gap: 40px;
+}
+
+.image {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
 }/*# sourceMappingURL=style.css.map */
