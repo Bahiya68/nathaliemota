@@ -1,15 +1,13 @@
 footer {
     width: 1440px;
-    height: 65px;
-    position: fixed;
+    height: 40px;
+    //position: fixed;
     bottom: 0;
     background-color: white;
     border-top: solid 1px;
+    margin-top: 30px;
 }
 
-body {
-    width: 1440px;
- }
 
 .footerMenu {
     height: 40px;
@@ -22,8 +20,7 @@ body {
     line-height: 24px;
     align-items: center;
     flex-wrap: wrap;
-    
-    
+
         li {
             list-style-type: none;
             

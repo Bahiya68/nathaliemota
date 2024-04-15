@@ -1,0 +1,196 @@
+//**** Détail Photo
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    font-family: 'font-family','Space Mono';
+    font-weight: 400;
+    
+
+        & h2 {
+            font-size: 66px;
+            line-height: 58px;
+            font-style: italic;
+        }
+        & p {
+            font-size: 14px; 
+            line-height: 20px;
+        }
+   
+}
+.photos-container {
+    width: 50%;
+    
+    @media (max-width: 1024px){
+      width: 100%;
+    }
+
+    img {
+      width: 100%;
+      object-fit: cover;
+      height: auto;
+      display: block;
+    }
+  }
+
+.photodetail {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+//*****section contact
+
+#myBtn {
+    font-family: 'font-family','Space Mono';
+    font-size: 16px;
+    cursor: pointer;
+    background-color: white;
+    margin: 0em;
+    padding-block: 0px;
+    padding-inline: 0px;
+    border-width: 0px;
+    width: 272px;
+    height: 50px;
+    background-color: #D8D8D8;
+    border-width: 0px;
+    margin-left: 85px;
+
+    &:hover {
+        font-weight: 700;
+    }
+}
+
+.section_post_contact_nav {
+    height: 120px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-top: solid 1px;
+    border-bottom: solid 1px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.part1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+        & p {
+            font-family: 'Poppins';
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: normal;
+        }
+}
+
+
+.miniimg img {
+    max-width: 81px;
+    max-height: 71px;
+    
+}
+
+.fleche_nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.autrechoix {
+    font-weight: 400;
+}
+
+
+//*****Gallerie
+
+.card_photos {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.photo-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    &:hover {
+        opacity: 0.5;
+    }
+}
+
+.photo-block {
+    width: 564px;
+    height: 495px;
+    //margin-top: 15px;
+}
+.photo-overlay {
+    z-index: 1;
+    position: relative;
+    left: 0;
+    bottom: 512px;
+    width: 100%;
+    height: 100%;
+    transition: background-color 0.3s ease;
+    &:hover {
+        background-color: #00000099;
+    }
+}
+
+.photo-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: white;
+    font-family: "Poppins";
+    position: relative;
+    left: 10px;
+    top: 467px;
+    display: none;
+}
+
+.photo-categorie {
+    font-size: 14px;
+    color: white;
+    position: relative;
+    left: 475px;
+    top: 435px;
+    display: none;
+    width: 14%;
+    text-transform: uppercase;
+}
+
+
+
+.eye-link {
+    position: relative;
+    z-index: 1;
+    left: 46%;
+    top: 25vh;
+    width: 50%;
+    display: none;
+}
+
+.fullscreen-icon {
+    position: relative;
+    bottom: 60px;
+    left: 490px;
+    width: 7%;
+    cursor: pointer;
+    display: none;
+}
+
+
+
+.photo-block:hover .photo-title,
+.photo-block:hover .photo-categorie,
+.photo-block:hover .eye-link,
+.photo-block:hover .fullscreen-icon {
+display: block;
+}
+
+
