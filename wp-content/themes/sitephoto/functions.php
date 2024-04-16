@@ -31,7 +31,7 @@ function sitephoto_register_assets()
     wp_enqueue_script('modale', get_theme_file_uri() . '/js/modale.js', array('jquery'), '1.0.0', true);
     wp_enqueue_script('single', get_stylesheet_directory_uri() . '/js/single.js', array('jquery'), '1.0.0', true);
     wp_enqueue_script('burger', get_stylesheet_directory_uri() . '/js/menu_Burger.js', array('jquery'), '1.0.0', true);
-    wp_enqueue_script('burger', get_stylesheet_directory_uri() . '/js/galerie_photos.js', array('jquery'), '1.0.0', true);
+    wp_enqueue_script('gallerie', get_stylesheet_directory_uri() . '/js/gallerie_photos.js', array('jquery'), '1.0.0', true);
     // Chargement jQuery from CDN
     wp_enqueue_script('jquery-cdn', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js', array(), '3.7.1', true);
 

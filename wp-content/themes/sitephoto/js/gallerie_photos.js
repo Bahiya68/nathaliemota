@@ -1,5 +1,5 @@
 // Lightbox Gallery
-
+console.log("OK");
 // query selectors
 const lightboxEnabled = document.querySelectorAll(".lightbox-enabled");
 const lightboxArray = Array.from(lightboxEnabled);
@@ -25,6 +25,7 @@ const setActiveImage = (image) => {
   activeImage = lightboxArray.indexOf(image);
 };
 
+// Gestionnaire d'événement pour le clic sur le bouton précédent
 const transitionSlidesLeft = () => {
   lightboxBtnLeft.focus();
   $(".lightbox-image").addClass("slideright");
@@ -39,6 +40,7 @@ const transitionSlidesLeft = () => {
   }, 500);
 };
 
+// Gestionnaire d'événement pour le clic sur le bouton suivant
 const transitionSlidesRight = () => {
   lightboxBtnRight.focus();
   $(".lightbox-image").addClass("slideleft");
