@@ -1,3 +1,23 @@
+.col-md-4 {
+    flex: 0 0 auto;
+    width: 45%;
+}
+
+.p-3 {
+    padding: 1rem !important;
+}
+
+.container {
+    max-width: 1440px;
+}
+
+
+.d-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .lightboxpreview {
    transition: all .3s linear;
 padding-top:60%;

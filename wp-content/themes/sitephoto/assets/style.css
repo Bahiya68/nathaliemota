@@ -17,7 +17,7 @@ h1 {
 }
 
 body {
-  width: 1440px;
+  max-width: 1440px;
   margin: auto;
   overflow: scroll;
 }
@@ -275,6 +275,7 @@ footer {
 .info p {
   font-size: 14px;
   line-height: 20px;
+  text-transform: uppercase;
 }
 
 .photos-container {
@@ -599,6 +600,25 @@ ul {
   -webkit-text-stroke: 3px #ffffff;
   -webkit-text-fill-color: transparent;
   z-index: 1;
+}
+
+.col-md-4 {
+  flex: 0 0 auto;
+  width: 45%;
+}
+
+.p-3 {
+  padding: 1rem !important;
+}
+
+.container {
+  max-width: 1440px;
+}
+
+.d-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .lightboxpreview {

@@ -1,15 +1,28 @@
+<?php get_header(); ?>
 <section class="detailphoto">
     <div class="photodetail">
         <div class="info">
-            <h2 class="titrephoto">TEAM <br> MARIÉE</h2>
-            <p class="refphoto">RÉFÉRENCE : BF2400</p>
-            <p class="catphoto">CATÉGORIE : MARIAGE</p>
-            <p class="formatphoto">FORMAT : PORTRAIT</p>
-            <p class="typephoto">TYPE : NUMÉRIQUE</p>
-            <p class="anneephoto">ANNÉE : 2022</p>
+            <h2><?php the_title(); ?></h2>
+            <p>RÉFÉRENCE : <?php echo get_field('reference'); ?></p>
+            <p>CATÉGORIE : <?php
+                            $categories = get_the_term_list($post->ID, 'categorie');
+                            if (!is_wp_error($categories)) {
+                                echo strip_tags($categories);
+                            }
+                            ?></p>
+            <p>FORMAT : <?php
+                        $formats = get_the_term_list($post->ID, 'format');
+                        if (!is_wp_error($formats)) {
+                            echo strip_tags($formats);
+                        }
+                        ?></p>
+            <p>TYPE : <?php echo get_field('type'); ?></p>
+            <p>ANNÉE : <?php echo get_the_date('Y'); ?></p>
         </div>
+
+
         <div class="photos-container">
-            <img src="<?php echo get_stylesheet_directory_uri() . './assets/images/nathalie-15.jpeg.webp'; ?>" alt="Team mariée">
+            <img class="Card-image " src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php echo get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true); ?>">
         </div>
 
     </div>
@@ -78,4 +91,6 @@
         </div>
 </section>
 
-</html>
+
+
+<?php get_footer(); ?>

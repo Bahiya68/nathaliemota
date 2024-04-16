@@ -50,19 +50,19 @@ add_action('wp_enqueue_scripts', 'sitephoto_register_assets');
 
 
 
-function mota_request_photos()
-{
-    $args = array('post_type' => 'photo',   'posts_per_page' => 2);
-    $query = new WP_Query($args);
-    if ($query->have_posts()) {
-        $response = $query;
-    } else {
-        $response = false;
-    }
+// function mota_request_photos()
+// {
+//     $args = array('post_type' => 'photo',   'posts_per_page' => 2);
+//     $query = new WP_Query($args);
+//     if ($query->have_posts()) {
+//         $response = $query;
+//     } else {
+//         $response = false;
+//     }
 
-    wp_send_json($response);
-    wp_die();
-}
+//     wp_send_json($response);
+//     wp_die();
+// }
 
 
 /*******Actions*******/
