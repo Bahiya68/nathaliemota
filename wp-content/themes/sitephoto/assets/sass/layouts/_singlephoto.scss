@@ -113,7 +113,7 @@
     width: 100%;
     justify-content: space-evenly;
     margin-bottom: 20px;
-    flex-wrap: wrap;
+    //flex-wrap: wrap;
 }
 
 .photo-image {
@@ -171,7 +171,7 @@
     position: relative;
     z-index: 1;
     left: 46%;
-    top: 25vh;
+    top: 18vh;
     width: 50%;
     display: none;
 }

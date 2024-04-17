@@ -1,3 +1,5 @@
+console.log("Menu Burger OK");
+
 //Animation au click du menu burger -> croix
 const burgericon = document.querySelector(".burger");
 const burger = document.querySelector(".menuFull");

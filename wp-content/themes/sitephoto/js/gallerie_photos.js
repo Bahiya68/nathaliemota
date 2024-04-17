@@ -1,5 +1,5 @@
 // Lightbox Gallery
-console.log("OK");
+console.log("Lightbox OK");
 // query selectors
 const lightboxEnabled = document.querySelectorAll(".lightbox-enabled");
 const lightboxArray = Array.from(lightboxEnabled);
