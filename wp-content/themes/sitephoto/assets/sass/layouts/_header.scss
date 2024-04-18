@@ -15,14 +15,6 @@ body {
     overflow: scroll;
 }
 
-// header {
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-//     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
-//     height: 80px;
-//     padding: 0px 27px;
-// }
 
 header {
     width: 1440px;
@@ -63,7 +55,7 @@ header {
                     a {
                         text-decoration: none;
                         color: black;
-                        cursor: pointer;
+                        cursor: pointer !important;
 
                         &:hover {
                             font-weight: 700;

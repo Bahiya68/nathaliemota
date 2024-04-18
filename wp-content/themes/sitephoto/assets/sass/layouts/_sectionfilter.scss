@@ -1,0 +1,119 @@
+$tablet: 768px;
+
+@mixin breakpoint($point) {
+  @if $point == untilTablet {
+    @media (max-width: $tablet - 1) {
+      @content;
+    }
+  } @else if $point == tablet {
+    @media (min-width: $tablet) {
+      @content;
+		}
+	}
+}
+
+.filterbox {
+    flex-wrap: wrap;
+    max-width:100% ;
+    display: flex;
+    flex-direction: row;
+}
+
+.filtrepart1,
+.filtre3 {
+    display: flex;
+    flex-direction: row;
+    max-width: 50%;
+}
+
+.filtrepart2 {
+    width: 720px;
+    display: flex;
+    justify-content: end;
+    max-width: 50%;
+}
+
+.dropdown {
+	width: 100%;
+	margin: 0 20px;
+	padding: 20px;
+	//background-color: white;
+	
+	font-family: 'Lato', sans-serif;
+	
+	@include breakpoint(tablet) {
+		width: 600px;
+	}
+	
+	&__switch:checked + &__options-filter &__select {
+		transform: scaleY(1);
+	}
+	
+	&__switch:checked + &__options-filter &__filter:after {
+		transform: rotate(-135deg);
+	}
+	
+	&__options-filter {
+    width: 100%;
+    cursor: pointer;
+  }
+
+  &__filter {
+    position: relative;
+    display: flex;
+    padding: 20px;
+    color: #595959;
+    background-color: #fff;
+    border: 1px solid #B8BBC2;
+    border-radius: 5px;
+    font-size: 14px;
+    text-transform: uppercase;
+	transition: .3s;
+	
+
+    &::after {
+      position: absolute;
+      top: 45%;
+      right: 20px;
+      content: '';
+      width: 10px;
+      height: 10px;
+      border-right: 2px solid #595959;
+      border-bottom: 2px solid #595959;
+      transform: rotate(45deg) translateX(-45%);
+      transition: .2s ease-in-out;
+    }
+  }
+
+  &__select {
+    z-index: 2;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    margin-top: 5px;
+    overflow: hidden;
+    box-shadow: 0 5px 10px 0 rgba(152, 152, 152, 0.6);
+		transform: scaleY(0);
+		transform-origin: top;
+    font-weight: 300;
+    transition: .2s ease-in-out;
+    text-transform: uppercase;
+  }
+
+	&__select-option {
+    
+    padding: 20px;
+    background-color: #fff;
+		border-bottom: 1px solid #d6d6d6;
+    transition: .3s;
+
+    &:last-of-type {
+  		border-bottom: 0;
+    }
+
+    &:hover {
+      background-color: #f9f9f9;
+    }
+	}	
+}

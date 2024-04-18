@@ -6,6 +6,8 @@ function sitephoto_supports()
     add_theme_support('post-thumbnails');
     // Ajouter automatiquement le titre du site dans l'en-tête du site
     add_theme_support('title-tag');
+    // Ajouter des tailles d'images
+    add_image_size('post-thumbnail', 565, 495, true);
 }
 
 add_action('after_setup_theme', 'sitephoto_supports');
@@ -32,6 +34,7 @@ function sitephoto_register_assets()
     wp_enqueue_script('single', get_stylesheet_directory_uri() . '/js/single.js', array('jquery'), '1.0.0', true);
     wp_enqueue_script('burger', get_stylesheet_directory_uri() . '/js/menu_Burger.js', array('jquery'), '1.0.0', true);
     wp_enqueue_script('gallerie', get_stylesheet_directory_uri() . '/js/gallerie_photos.js', array('jquery'), '1.0.0', true);
+    wp_enqueue_script('filter', get_stylesheet_directory_uri() . '/js/sectionfilter.js', array('jquery'), '1.0.0', true);
     // Chargement jQuery from CDN
     wp_enqueue_script('jquery-cdn', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js', array(), '3.7.1', true);
 
@@ -46,23 +49,6 @@ function sitephoto_register_assets()
 }
 add_action('wp_enqueue_scripts', 'sitephoto_register_assets');
 
-
-
-
-
-// function mota_request_photos()
-// {
-//     $args = array('post_type' => 'photo',   'posts_per_page' => 2);
-//     $query = new WP_Query($args);
-//     if ($query->have_posts()) {
-//         $response = $query;
-//     } else {
-//         $response = false;
-//     }
-
-//     wp_send_json($response);
-//     wp_die();
-// }
 
 
 /*******Actions*******/

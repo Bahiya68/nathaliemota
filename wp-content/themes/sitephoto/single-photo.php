@@ -1,22 +1,27 @@
 <?php get_header(); ?>
+
+<!-- 1sy part dynamique -->
 <section class="detailphoto">
     <div class="photodetail">
         <div class="info">
             <h2><?php the_title(); ?></h2>
-            <p>RÉFÉRENCE : <?php echo get_field('reference'); ?></p>
-            <p>CATÉGORIE : <?php
-                            $categories = get_the_term_list($post->ID, 'categorie');
-                            if (!is_wp_error($categories)) {
-                                echo strip_tags($categories);
+            <p>RÉFÉRENCE : <?php the_field('reference'); ?></p>
+            <p>CATÉGORIE : <?php $categorie = get_the_term_list($post_id, 'categorie');
+                            if ($categorie) {
+                                echo $categorie;
+                            } else {
+                                echo 'Aucun terme trouvé.';
                             }
                             ?></p>
             <p>FORMAT : <?php
-                        $formats = get_the_term_list($post->ID, 'format');
-                        if (!is_wp_error($formats)) {
-                            echo strip_tags($formats);
+                        $format = get_the_term_list($post_id, 'format');
+                        if ($format) {
+                            echo $format;
+                        } else {
+                            echo 'Aucun terme trouvé.';
                         }
                         ?></p>
-            <p>TYPE : <?php echo get_field('type'); ?></p>
+            <p>TYPE : <?php the_field('type'); ?></p>
             <p>ANNÉE : <?php echo get_the_date('Y'); ?></p>
         </div>
 
@@ -25,9 +30,9 @@
             <img class="Card-image " src="<?php echo get_the_post_thumbnail_url(); ?>"
                 alt="<?php echo get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true); ?>">
         </div>
-
     </div>
 
+    <!-- 2nd part dynamique -->
     <div class="section_post_contact_nav">
         <div class="part1">
             <div>
@@ -111,11 +116,10 @@
             </div>
         </div>
     </div>
-
-
-
-
 </section>
+
+
+
 <section class="lightbox-container">
 
     <span class="material-symbols-outlined material-icons lightbox-btn left" id="left">
