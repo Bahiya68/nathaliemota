@@ -7,7 +7,7 @@ function sitephoto_supports()
     // Ajouter automatiquement le titre du site dans l'en-tête du site
     add_theme_support('title-tag');
     // Ajouter des tailles d'images
-    add_image_size('post-thumbnail', 565, 495, true);
+    add_image_size('post-thumbnail', 500, 500, true);
 }
 
 add_action('after_setup_theme', 'sitephoto_supports');

@@ -4,6 +4,8 @@
 
 <?php get_template_part('template-parts/sectionfilter'); ?>
 
-<?php get_template_part('template-parts/gallerie_photos'); ?>
+<section id="gallerie">
+    <?php get_template_part('template-parts/gallerie_photos'); ?>
+</section>
 
 <?php get_footer(); ?>

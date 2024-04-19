@@ -69,7 +69,7 @@
         <div class="card_photos">
             <div class="lightbox_img_wrap">
                 <div class="photo-block">
-                    <img class="photo-image lazyload"
+                    <img class="photo-image"
                         src="<?php echo get_stylesheet_directory_uri() . './assets/images/nathalie-5.jpeg.webp'; ?>"
                         alt="Embrassez la mariée">
                     <div class="photo-overlay">
@@ -93,7 +93,7 @@
 
             <div class="lightbox_img_wrap">
                 <div class="photo-block">
-                    <img class="photo-image lazyload"
+                    <img class="photo-image"
                         src="<?php echo get_stylesheet_directory_uri() . './assets/images/nathalie-4.jpeg.webp'; ?>"
                         alt="Embrassez la mariée">
                     <div class="photo-overlay">
@@ -107,7 +107,7 @@
                             </a>
                         </div>
                         <div class="fullscreen-icon lightbox-enabled">
-                            <img class="fullscreen-image lazyload"
+                            <img class="fullscreen-image"
                                 src="<?php echo get_stylesheet_directory_uri() . './assets/images/Icon_fullscreen.png'; ?>"
                                 alt="Icone fullscreen pour voir la photo en grand">
                         </div>
