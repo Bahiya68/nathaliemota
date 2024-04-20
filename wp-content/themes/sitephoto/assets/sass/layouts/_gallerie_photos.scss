@@ -1,7 +1,5 @@
 //******Gallerie
 
-
-
 #gallerie {
     display: flex;
     flex-wrap: wrap;
@@ -13,3 +11,21 @@
     gap: 10px;
 }
 
+.eye-link {
+    position: relative;
+    z-index: 1;
+    left: 46%;
+    top: 18vh;
+    width: 50%;
+    display: none;
+}
+
+//  .photo-block a { 
+//      height: 495px;
+//  }
+
+.photopost img {
+    width: 564px;
+    height: 495px;
+    object-fit: cover;
+}
