@@ -38,8 +38,7 @@ if ($query->have_posts()) :
         </div>
 
         <div class="fullscreen-icon lightbox-enabled"
-            data-imgsrc="<?php echo esc_url(get_the_post_thumbnail_url(get_the_ID())); ?>"
-            data-post-title="<?php echo esc_attr(get_the_title(get_the_ID())); ?>">
+            data-imgsrc="<?php echo esc_url(get_the_post_thumbnail_url(get_the_ID())); ?>">
             <img class="fullscreen-image"
                 src=" <?php echo get_stylesheet_directory_uri() . '/assets/images/Icon_fullscreen.png'; ?>"
                 alt=" Icone fullscreen pour voir la photo en grand">
