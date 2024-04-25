@@ -530,7 +530,7 @@ a:-webkit-any-link {
 }
 
 .lightbox-container.active .lightbox-image-wrapper {
-  transform: scale(1);
+  transform: scale(0.8);
 }
 
 .lightbox-btn, #close {
@@ -558,7 +558,9 @@ a:-webkit-any-link {
   right: 50px;
 }
 
-.lightbox-image {
+.lightbox-image,
+.lightbox_reference,
+.lightbox_categories {
   width: 100%;
   -webkit-box-shadow: 5px 5px 20px 2px rgba(0, 0, 0, 0.19);
   box-shadow: 5px 5px 20px 2px rgba(0, 0, 0, 0.19);
@@ -909,4 +911,27 @@ ul {
   width: 564px;
   height: 495px;
   object-fit: cover;
+}
+
+/*****Lightbox***/
+.lightbox-container .lightbox_categorie {
+  right: 0%;
+  bottom: -4%;
+}
+
+.lightbox-container .lightbox_text {
+  font-size: 24px;
+  color: #ffffff;
+  text-transform: uppercase;
+  position: absolute;
+}
+@media screen and (max-width: 425px) {
+  .lightbox-container .lightbox_text {
+    font-size: 18px;
+  }
+}
+
+.lightbox-container .lightbox_reference {
+  left: 0%;
+  bottom: -4%;
 }/*# sourceMappingURL=style.css.map */
