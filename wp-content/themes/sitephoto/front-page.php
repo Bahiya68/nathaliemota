@@ -7,5 +7,9 @@
 <section id="gallerie">
     <?php get_template_part('template-parts/gallerie_photos'); ?>
 </section>
-
+<section class="bouton_charger_plus">
+    <button class="btn__wrapper">
+        <a class="btn" id="load-more">Charger plus</a>
+    </button>
+</section>
 <?php get_footer(); ?>
