@@ -36,7 +36,7 @@ if ($query->have_posts()) :
         </div>
         <div class="fullscreen-icon lightbox-enabled"
             data-imgsrc="<?php echo esc_url(get_the_post_thumbnail_url(get_the_ID())); ?>"
-            data-reference="<?php the_field('reference'); ?>"
+            data-reference="<?php echo the_field('reference'); ?>"
             data-categorie="<?php echo strip_tags(get_the_term_list($post->ID, 'categorie')); ?>">
             <img class="fullscreen-image"
                 src=" <?php echo get_stylesheet_directory_uri() . '/assets/images/Icon_fullscreen.png'; ?>"

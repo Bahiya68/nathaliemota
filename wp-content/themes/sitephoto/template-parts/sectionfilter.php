@@ -8,7 +8,8 @@
                         Catégorie
                     </li>
 
-                    <ul class="dropdown__select" onfocus="this.size=4;" onblur="this.size=0;" onchange="this.size=1; this.blur()">
+                    <ul class="dropdown__select" onfocus="this.size=4;" onblur="this.size=0;"
+                        onchange="this.size=1; this.blur()">
                         <option class="dropdown__select-option" role="option">
                             Réception
                         </option>
@@ -60,10 +61,16 @@
 
                     <ul class="dropdown3__select3">
                         <option class="dropdown3__select-option3" role="option">
-                            À partir des plus récentes
+                            2019
                         </option>
                         <option class="dropdown3__select-option3" role="option">
-                            À partir des plus anciennes
+                            2020
+                        </option>
+                        <option class="dropdown3__select-option3" role="option">
+                            2021
+                        </option>
+                        <option class="dropdown3__select-option3" role="option">
+                            2022
                         </option>
                     </ul>
 

@@ -132,9 +132,8 @@ $tablet: 768px;
     width: 100%;
     margin-top: 5px;
     overflow: hidden;
-    box-shadow: 0 5px 10px 0 rgba(152, 152, 152, 0.6);
-		transform: scaleY(0);
-		transform-origin: top;
+	transform: scaleY(0);
+	transform-origin: top;
     font-weight: 300;
     transition: .2s ease-in-out;
     text-transform: uppercase;
@@ -144,7 +143,7 @@ $tablet: 768px;
     
     padding: 20px;
     background-color: #fff;
-		border-bottom: 1px solid #d6d6d6;
+	border-bottom: 1px solid #d6d6d6;
     transition: .3s;
 
     &:last-of-type {
@@ -223,9 +222,8 @@ $tablet: 768px;
     width: 100%;
     margin-top: 5px;
     overflow: hidden;
-    box-shadow: 0 5px 10px 0 rgba(152, 152, 152, 0.6);
-		transform: scaleY(0);
-		transform-origin: top;
+	transform: scaleY(0);
+	transform-origin: top;
     font-weight: 300;
     transition: .2s ease-in-out;
     text-transform: uppercase;
@@ -314,19 +312,18 @@ $tablet: 768px;
     width: 100%;
     margin-top: 5px;
     overflow: hidden;
-    box-shadow: 0 5px 10px 0 rgba(152, 152, 152, 0.6);
-		transform: scaleY(0);
-		transform-origin: top;
+	transform: scaleY(0);
+	transform-origin: top;
     font-weight: 300;
     transition: .2s ease-in-out;
     text-transform: uppercase;
   }
 
 	&__select-option3 {
-    
+    //width: 258px;
     padding: 20px;
     background-color: #fff;
-		border-bottom: 1px solid #d6d6d6;
+	border-bottom: 1px solid #d6d6d6;
     transition: .3s;
 
     &:last-of-type {
@@ -373,9 +370,8 @@ $tablet: 768px;
 
 //**couleur des filtre au survol
 option:nth-child(1):hover {
-    background-color:#fce3e3;
+    background-color:#ffecec;
     color: #313144;
-    
 }
 
 option:nth-child(2):hover {

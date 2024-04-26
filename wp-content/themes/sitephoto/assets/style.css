@@ -725,7 +725,6 @@ a:-webkit-any-link {
   width: 100%;
   margin-top: 5px;
   overflow: hidden;
-  box-shadow: 0 5px 10px 0 rgba(152, 152, 152, 0.6);
   transform: scaleY(0);
   transform-origin: top;
   font-weight: 300;
@@ -801,7 +800,6 @@ a:-webkit-any-link {
   width: 100%;
   margin-top: 5px;
   overflow: hidden;
-  box-shadow: 0 5px 10px 0 rgba(152, 152, 152, 0.6);
   transform: scaleY(0);
   transform-origin: top;
   font-weight: 300;
@@ -877,7 +875,6 @@ a:-webkit-any-link {
   width: 100%;
   margin-top: 5px;
   overflow: hidden;
-  box-shadow: 0 5px 10px 0 rgba(152, 152, 152, 0.6);
   transform: scaleY(0);
   transform-origin: top;
   font-weight: 300;
@@ -924,7 +921,7 @@ a:-webkit-any-link {
 }
 
 option:nth-child(1):hover {
-  background-color: #fce3e3;
+  background-color: #ffecec;
   color: #313144;
 }
 

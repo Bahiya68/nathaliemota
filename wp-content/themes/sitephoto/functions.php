@@ -55,3 +55,11 @@ add_action('wp_enqueue_scripts', 'sitephoto_register_assets');
 
 add_action('wp_ajax_request_photos', 'function mota_request_photos()');
 add_action('wp_ajax_nopriv_request_photos', 'function mota_request_photos()');
+
+
+/********AJAX */
+// function ajaxing()
+// {
+//     <try>xhr = new XMLHttpRequest();</try>
+//     alert(xhr);
+// }
