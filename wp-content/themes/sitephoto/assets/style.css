@@ -23,12 +23,11 @@ body {
 }
 
 header {
-  width: 1440px;
   background-color: white;
   box-shadow: 0px 4px 14px 10px rgba(0, 0, 0, 0.03);
 }
 header .siteNavigation {
-  min-width: 1440px;
+  max-width: 1440px;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -38,7 +37,7 @@ header .siteNavigation {
   height: 80px;
 }
 header .siteNavigation .siteNavigation__logo img {
-  width: 216px;
+  max-width: 216px;
   align-items: center;
   margin-left: 145px;
 }
@@ -79,17 +78,14 @@ header .siteNavigation .siteNavigation__menu .navMenu li a:hover {
   font-weight: 700;
 }
 
-@media (max-width: 767px) {
+@media (min-width: 960px) {
   .burger {
-    display: none;
+    display: none !important;
   }
 }
-@media (min-width: 767px) {
-  .siteNavigation__menu {
-    display: none;
-  }
-  .hamburger-icon,
-  .cross-icon {
+@media (max-width: 960px) {
+  .siteNavigation__menu li,
+  .siteNavigation__menu button {
     display: none !important;
   }
 }
@@ -172,7 +168,7 @@ label {
 }
 
 footer {
-  width: 1440px;
+  max-width: 1440px;
   height: 40px;
   bottom: 0;
   background-color: white;
@@ -181,7 +177,6 @@ footer {
 }
 
 .footerMenu {
-  height: 40px;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -204,6 +199,13 @@ footer {
   font-weight: 700;
 }
 
+@media (max-width: 960px) {
+  .footerMenu {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+}
 @font-face {
   font-family: "PoppinsBold";
   src: url("../fonts/Poppins-Bold.woff") format("woff"), url("../fonts/Poppins-Bold.woff2") format("woff2");
@@ -281,7 +283,6 @@ footer {
 
 a:-webkit-any-link {
   color: black;
-  cursor: auto;
   text-decoration: none;
 }
 
@@ -959,8 +960,9 @@ option:nth-child(4):hover {
   height: 24px;
   cursor: pointer;
   position: relative;
-  bottom: 50%;
   left: 90%;
+  display: flex;
+  align-items: center;
 }
 .burger span {
   width: 100%;
@@ -1003,7 +1005,8 @@ option:nth-child(4):hover {
   visibility: visible;
   display: block;
   transition: opacity 0.5s ease-in, height 0.5s ease-in;
-  width: 1440px;
+  width: 100%;
+  max-width: 1440px;
   overflow: hidden;
   z-index: 5;
 }
@@ -1070,14 +1073,6 @@ ul {
   margin: 0 !important;
 }
 
-@media (max-width: 767px) {
-  header {
-    padding: 0;
-  }
-  .siteNavigation__menu {
-    display: none;
-  }
-}
 .banner {
   height: 962px;
   display: flex;
@@ -1137,7 +1132,7 @@ ul {
 /*****Lightbox***/
 .lightbox-container .lightbox_categorie {
   right: 0%;
-  bottom: -4%;
+  bottom: -6%;
 }
 
 .lightbox-container .lightbox_text {
@@ -1154,5 +1149,5 @@ ul {
 
 .lightbox-container .lightbox_reference {
   left: 0%;
-  bottom: -4%;
+  bottom: -6%;
 }/*# sourceMappingURL=style.css.map */

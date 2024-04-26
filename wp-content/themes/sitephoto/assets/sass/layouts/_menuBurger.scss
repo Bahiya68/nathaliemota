@@ -15,8 +15,10 @@
     height: 24px;
     cursor: pointer;
     position: relative;
-    bottom: 50%;
+    //bottom: 50%;
     left: 90%;
+    display: flex;
+    align-items: center;
     
 
     span {
@@ -71,12 +73,12 @@
          visibility: visible;
          display: block;
          transition: opacity 0.5s ease-in, height 0.5s ease-in;
-         width: 1440px;
+         width: 100%;
+         max-width: 1440px;
          overflow: hidden;
          z-index: 5;
-        
-        
     }
+    
 .menuFull {
         & a {
             color: #FFF;
@@ -151,13 +153,3 @@ ul {
 }
 
 
-
-@media (max-width: 767px) {
-    header {
-    padding: 0;
-    }
-    .siteNavigation__menu {
-    display: none;
-    }
-
-}    

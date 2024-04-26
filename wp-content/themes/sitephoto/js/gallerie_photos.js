@@ -1,6 +1,6 @@
 // Lightbox Gallery
 console.log("Lightbox OK");
-// query selectors
+// query selectors des éléments du lightbox
 const lightboxEnabled = document.querySelectorAll(".lightbox-enabled");
 const lightboxArray = Array.from(lightboxEnabled);
 const lastImage = lightboxArray.length - 1;
@@ -13,7 +13,7 @@ const close = document.querySelector("#close");
 let activeImage;
 
 //****************************************Image *************************************************/
-// Functions
+// Functions :  Affiche la lightbox en ajoutant la classe "active" au conteneur
 const showLightBox = () => {
   lightboxContainer.classList.add("active");
 };
@@ -21,7 +21,7 @@ const showLightBox = () => {
 const hideLightBox = () => {
   lightboxContainer.classList.remove("active");
 };
-
+//Affiche une image spécifique dans la lightbox en changeant la source de l'image et en affichant les données supplémentaires telles que la référence et la catégorie.
 const setActiveImage = (image) => {
   lightboxImage.src = image.dataset.imgsrc;
   activeImage = lightboxArray.indexOf(image);
@@ -33,6 +33,7 @@ const setActiveImage = (image) => {
   document.querySelector(".lightbox_categorie").innerText = category;
 };
 
+//Gèrent la transition entre les images
 const transitionSlidesLeft = () => {
   lightboxBtnLeft.focus();
   $(".lightbox-image").addClass("slideright");
@@ -60,6 +61,7 @@ const transitionSlidesRight = () => {
   }, 500);
 };
 
+//Gère le mouvement de la transition en fonction de l'élément (gauche ou droit).
 const transitionSlideHandler = (moveItem) => {
   moveItem.includes("left") ? transitionSlidesLeft() : transitionSlidesRight();
 };
