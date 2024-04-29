@@ -4,8 +4,6 @@
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
     <!-- permet de récupérer les scripts et styles -->
     <?php wp_head(); ?>
 </head>
@@ -20,9 +18,9 @@
                 <div class="siteNavigation__logo">
                     <!-- ramène à l’accueil du site grâce à la fonction home_url() -->
                     <a href="<?php echo home_url('/'); ?>">
-                        <img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/nathalieMotaLogo.png'; ?>" alt="Logo">
+                        <img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/nathalieMotaLogo.png'; ?>"
+                            alt="Logo">
                     </a>
-
                 </div>
 
                 <div class="siteNavigation__menu">

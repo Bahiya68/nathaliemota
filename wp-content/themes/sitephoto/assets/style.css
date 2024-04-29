@@ -351,8 +351,8 @@ a:-webkit-any-link {
 }
 
 .miniimg img {
-  max-width: 81px;
-  max-height: 71px;
+  max-width: 100px;
+  max-height: 90px;
 }
 
 .fleche_nav {
@@ -436,6 +436,14 @@ a:-webkit-any-link {
   display: flex;
   flex-direction: row;
   gap: 10px;
+}
+
+.likephoto {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 1440px;
+  justify-content: center;
 }
 
 .lightboxpreview {
@@ -610,6 +618,11 @@ a:-webkit-any-link {
   display: none;
 }
 
+#myBtn:hover {
+  background-color: black;
+  color: #fff;
+}
+
 .filterbox {
   flex-wrap: wrap;
   width: 1192px;
@@ -764,6 +777,7 @@ a:-webkit-any-link {
   transform: rotate(-135deg);
 }
 .dropdown2__options-filter2 {
+  max-width: 252px;
   width: 100%;
   cursor: pointer;
 }
@@ -895,7 +909,7 @@ a:-webkit-any-link {
   background-color: #f9f9f9;
 }
 
-.bouton_charger_plus {
+#bouton_charger_plus {
   display: flex;
   justify-content: center;
 }

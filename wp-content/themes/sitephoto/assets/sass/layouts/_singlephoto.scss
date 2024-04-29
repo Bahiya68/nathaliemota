@@ -98,8 +98,8 @@ a:-webkit-any-link {
 
 
 .miniimg img {
-    max-width: 81px;
-    max-height: 71px;
+    max-width: 100px;
+    max-height: 90px;
     
 }
 
@@ -137,6 +137,7 @@ a:-webkit-any-link {
 
 
 .photo-overlay {
+    
     z-index: 1;
     position: relative;
     left: 0;
@@ -191,6 +192,13 @@ display: block;
     gap: 10px;
 }
 
+.likephoto {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 1440px;
+    justify-content: center;
+}
 
 //******Light Box
 
@@ -371,3 +379,9 @@ display: block;
     cursor: pointer;
     display: none;
 }
+
+#myBtn:hover {
+    background-color: black;
+    color: #fff;
+}
+

@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<!-- 1sy part dynamique -->
+<!-- 1st part dynamique -->
 <section class="detailphoto">
     <div class="photodetail">
         <div class="info">
@@ -24,13 +24,18 @@
             <p>TYPE : <?php the_field('type'); ?></p>
             <p>ANNÉE : <?php echo get_the_date('Y'); ?></p>
         </div>
-
-
         <div class="photos-container">
-            <img class="Card-image " src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php echo get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true); ?>">
+            <img class="Card-image " src="<?php echo get_the_post_thumbnail_url(); ?>"
+                alt="<?php echo get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true); ?>">
         </div>
     </div>
 
+    <!-- ********Mini navigation  -->
+
+    <?php
+    $previous = get_previous_post();
+    $next = get_next_post();
+    ?>
     <!-- 2nd part dynamique -->
     <div class="section_post_contact_nav">
         <div class="part1">
@@ -43,17 +48,35 @@
         </div>
         <div class="part2">
             <div class="photominiature">
+
                 <div class="miniimg">
-                    <img src="<?php echo get_stylesheet_directory_uri() . './assets/images/nathalie-0.jpeg.webp'; ?>" alt="Santé !">
-                </div>
-                <div class="fleche_nav">
-                    <div class="flechegauche_nav">
-                        <img src="<?php echo get_stylesheet_directory_uri() . './assets/images/flechegauche.svg'; ?>" alt="flechegauche">
+                    <!-- <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php echo get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true); ?> -->
+                    <div class=" fleche_nav">
+                        <div class="flechegauche_nav">
+                            <?php if (get_previous_post()) { ?>
+                            <a href="<?php echo get_the_permalink($previous) ?>">
+                                <img src="<?php echo get_the_post_thumbnail_url($previous) ?>" alt="">
+                                <div>
+                                    <img src="<?php echo get_stylesheet_directory_uri() . './assets/images/flechegauche.svg'; ?>"
+                                        alt="flechegauche">
+                                </div>
+                            </a>
+                            <?php } ?>
+                        </div>
+                        <div class="flechedroite_nav">
+                            <?php if (get_next_post()) { ?>
+                            <a href="<?php echo get_the_permalink($next) ?>">
+                                <img src="<?php echo get_the_post_thumbnail_url($next) ?>" alt="">
+                                <div>
+                                    <img src="<?php echo get_stylesheet_directory_uri() . './assets/images/flechedroite.svg'; ?>"
+                                        alt="flechedroite">
+                                </div>
+                            </a>
+                            <?php } ?>
+                        </div>
                     </div>
-                    <div class="flechedroite_nav">
-                        <img src="<?php echo get_stylesheet_directory_uri() . './assets/images/flechedroite.svg'; ?>" alt="flechedroite">
-                    </div>
                 </div>
+
             </div>
         </div>
     </div>
@@ -74,120 +97,53 @@
             if ($query->have_posts()) :
                 while ($query->have_posts()) :
                     $query->the_post();
-
             ?>
-
-
-                    <div class="photo-block">
-                        <?php if (has_post_thumbnail()) : ?>
-                            <div class="photopost">
-                                <a data-href="<?php echo get_the_permalink(get_the_ID()); ?>">
-                                    <?php the_post_thumbnail('medium', array('class' => 'post-thumbnail')); ?>
-                                </a>
-                            </div>
-                            <div class="photo-overlay">
-                                <h2 class="photo-title"><?php the_field('reference'); ?></h2>
-                                <h3 class="photo-categorie"><?php echo strip_tags(get_the_term_list($post->ID, 'categorie')); ?>
-                                </h3>
-                                <div class="eye-icon">
-                                    <a class="eye-link" href="<?php the_permalink() ?>" class="eye-link">
-                                        <img class="eye-image" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/Icon_eye.png'; ?>" alt="Icone oeil pour voir la photo">
-                                    </a>
-                                </div>
-                                <!-- récupère l'URL de l'image mise en avant de l'article en cours -->
-                                <div class="fullscreen-icon lightbox-enabled" data-imgsrc="<?php echo esc_url(get_the_post_thumbnail_url(get_the_ID())); ?>" data-reference="<?php echo the_field('reference'); ?>" data-categorie="<?php echo strip_tags(get_the_term_list($post->ID, 'categorie')); ?>">
-                                    <img class="fullscreen-image" src=" <?php echo get_stylesheet_directory_uri() . '/assets/images/Icon_fullscreen.png'; ?>" alt=" Icone fullscreen pour voir la photo en grand">
-                                </div>
-                            </div>
-                            <div class="lightbox-container">
-
-                                <span class="material-symbols-outlined material-icons lightbox-btn left" id="left">
-                                    <img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/arrows_gauche.png'; ?>" alt="précedent">
-                                </span>
-                                <span class="material-symbols-outlined material-icons lightbox-btn right" id="right">
-                                    <img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/arrows_droite.png'; ?>" alt="suivant">
-                                </span>
-                                <span id="close" class="close material-icons material-symbols-outlined">
-                                    <img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/Cross.png'; ?>" alt="fermer">
-                                </span>
-                                <span class="lightbox-image-wrapper">
-                                    <img alt="lightboximage" class="lightbox-image">
-                                    <div class="lightbox_text lightbox_reference"></div>
-                                    <div class="lightbox_text lightbox_categorie"></div>
-
-                                </span>
-
-                            </div>
+            <div class="photo-block">
+                <?php if (has_post_thumbnail()) : ?>
+                <div class="photopost">
+                    <a data-href="<?php echo get_the_permalink(get_the_ID()); ?>">
+                        <?php the_post_thumbnail('medium', array('class' => 'post-thumbnail')); ?>
+                    </a>
+                </div>
+                <div class="photo-overlay">
+                    <h2 class="photo-title"><?php the_field('reference'); ?></h2>
+                    <h3 class="photo-categorie"><?php echo strip_tags(get_the_term_list($post->ID, 'categorie')); ?>
+                    </h3>
+                    <div class="eye-icon">
+                        <a class="eye-link" href="<?php the_permalink() ?>" class="eye-link">
+                            <img class="eye-image"
+                                src="<?php echo get_stylesheet_directory_uri() . '/assets/images/Icon_eye.png'; ?>"
+                                alt="Icone oeil pour voir la photo">
+                        </a>
                     </div>
+                    <!-- récupère l'URL de l'image mise en avant de l'article en cours -->
+                    <div class="fullscreen-icon lightbox-enabled"
+                        data-imgsrc="<?php echo esc_url(get_the_post_thumbnail_url(get_the_ID())); ?>"
+                        data-reference="<?php echo the_field('reference'); ?>"
+                        data-categorie="<?php echo strip_tags(get_the_term_list($post->ID, 'categorie')); ?>">
+                        <img class="fullscreen-image"
+                            src=" <?php echo get_stylesheet_directory_uri() . '/assets/images/Icon_fullscreen.png'; ?>"
+                            alt=" Icone fullscreen pour voir la photo en grand">
+                    </div>
+                </div>
 
-                <?php endif; ?>
+                <?php get_template_part('/template-parts/lightbox'); ?>
 
-        <?php
+            </div>
+            <?php endif; ?>
+            <?php the_posts_pagination(); ?>
+            <?php
                 endwhile;
                 wp_reset_postdata(); // Réinitialise la requête
             else :
                 echo 'Aucun article trouvé.';
             endif;
-
         ?>
         </div>
-        <!-- <div class="card_photos">
-            <div class="lightbox_img_wrap">
-                <div class="photo-block">
-                    <img class="photo-image"
-                        src="<?php echo get_stylesheet_directory_uri() . './assets/images/nathalie-5.jpeg.webp'; ?>"
-                        alt="Embrassez la mariée">
-                    <div class="photo-overlay">
-                        <h2 class="photo-title">Embrassez la mariée</h2>
-                        <h3 class="photo-categorie">MARIAGE</h3>
-                        <div class="eye-icon">
-                            <a class="eye-link" href="http://localhost/nathaliemota/?photo=embrassez-la-mariee">
-                                <img class="eye-image"
-                                    src="<?php echo get_stylesheet_directory_uri() . './assets/images/Icon_eye.png'; ?>"
-                                    alt="Icone oeil pour voir la photo">
-                            </a>
-                        </div>
-                        <div class="fullscreen-icon lightbox-enabled">
-                            <img class="fullscreen-image lazyload"
-                                src="<?php echo get_stylesheet_directory_uri() . './assets/images/Icon_fullscreen.png'; ?>"
-                                alt="Icone fullscreen pour voir la photo en grand">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="lightbox_img_wrap">
-                <div class="photo-block">
-                    <img class="photo-image"
-                        src="<?php echo get_stylesheet_directory_uri() . './assets/images/nathalie-4.jpeg.webp'; ?>"
-                        alt="Embrassez la mariée">
-                    <div class="photo-overlay">
-                        <h2 class="photo-title">Embrassez la mariée</h2>
-                        <h3 class="photo-categorie">MARIAGE</h3>
-                        <div class="eye-icon">
-                            <a class="eye-link" href="http://localhost/nathaliemota/?photo=embrassez-la-mariee">
-                                <img class="eye-image"
-                                    src="<?php echo get_stylesheet_directory_uri() . './assets/images/Icon_eye.png'; ?>"
-                                    alt="Icone oeil pour voir la photo">
-                            </a>
-                        </div>
-                        <div class="fullscreen-icon lightbox-enabled">
-                            <img class="fullscreen-image"
-                                src="<?php echo get_stylesheet_directory_uri() . './assets/images/Icon_fullscreen.png'; ?>"
-                                alt="Icone fullscreen pour voir la photo en grand">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-
     </div>
 </section>
 
-
-
 <section class="lightbox-container">
-
     <span class="material-symbols-outlined material-icons lightbox-btn left" id="left">
         <img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/arrows_gauche.png'; ?>" alt="précedent">
 
@@ -200,12 +156,7 @@
     </span>
     <div class="lightbox-image-wrapper">
         <img alt="lightboximage" class="lightbox-image">
-
-
     </div>
-
 </section>
-
-
 
 <?php get_footer(); ?>

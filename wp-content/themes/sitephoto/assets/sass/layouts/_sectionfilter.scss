@@ -181,6 +181,7 @@ $tablet: 768px;
 	}
 	
 	&__options-filter2 {
+    max-width: 252px;
     width: 100%;
     cursor: pointer;
   }
@@ -340,7 +341,7 @@ $tablet: 768px;
 
 
 
-.bouton_charger_plus {
+#bouton_charger_plus {
     display: flex;
     justify-content: center;    
 }

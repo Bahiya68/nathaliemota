@@ -12,7 +12,7 @@
         );
         ?>
     </nav>
-
+    <?php get_template_part('/template-parts/lightbox'); ?>
 </footer>
 </div>
 <?php wp_footer(); ?>
