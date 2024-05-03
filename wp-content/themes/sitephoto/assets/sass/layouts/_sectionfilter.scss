@@ -140,11 +140,10 @@ $tablet: 768px;
   }
 
 	&__select-option {
-    
     padding: 20px;
     background-color: #fff;
 	border-bottom: 1px solid #d6d6d6;
-    transition: .3s;
+    transition: 0.3s;
 
     &:last-of-type {
   		border-bottom: 0;

@@ -8,7 +8,8 @@
                         Catégorie
                     </li>
 
-                    <ul class="dropdown__select" onfocus="this.size=4;" onblur="this.size=0;" onchange="this.size=1; this.blur()">
+                    <ul class="dropdown__select" onfocus="this.size=4;" onblur="this.size=0;"
+                        onchange="this.size=1; this.blur()">
                         <option class="dropdown__select-option" role="option">
                             Réception
                         </option>

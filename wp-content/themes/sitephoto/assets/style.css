@@ -427,7 +427,7 @@ a:-webkit-any-link {
 
 .photo-block:hover .photo-title,
 .photo-block:hover .photo-categorie,
-.photo-block:hover .eye-link,
+.photo-block:hover .eye-icon,
 .photo-block:hover .fullscreen-icon {
   display: block;
 }
@@ -1128,7 +1128,7 @@ ul {
   gap: 10px;
 }
 
-.eye-link {
+.eye-icon {
   position: relative;
   z-index: 1;
   left: 46%;

@@ -89,3 +89,5 @@ lightboxBtns.forEach((btn) => {
 lightboxImage.addEventListener("click", (e) => {
   e.stopPropagation();
 });
+
+

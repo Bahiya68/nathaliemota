@@ -35,7 +35,7 @@ function sitephoto_register_assets()
     wp_enqueue_script('burger', get_stylesheet_directory_uri() . '/js/menu_Burger.js', array('jquery'), '1.0.0', true);
     wp_enqueue_script('gallerie', get_stylesheet_directory_uri() . '/js/gallerie_photos.js', array('jquery'), '1.0.0', true);
     wp_enqueue_script('filter', get_stylesheet_directory_uri() . '/js/sectionfilter.js', array('jquery'), '1.0.0', true);
-    wp_enqueue_script('loadmore', get_stylesheet_directory_uri() . '/js/loadmore.js', array('jquery'), '1.0.0', true);
+    wp_enqueue_script('loadMoreAjax', get_stylesheet_directory_uri() . '/js/loadMoreAjax.js', array('jquery'), '1.0.0', true);
     // Ajout de la bibliothèque jQuery
     wp_enqueue_script('jquery-cdn', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js', array(), '3.7.1', true);
 }
@@ -45,3 +45,8 @@ add_action('wp_enqueue_scripts', 'sitephoto_register_assets');
 
 // /*******Actions*******/
 // /********AJAX */
+function load_more_posts()
+{
+}
+add_action('wp_ajax_load_more_posts', 'load_more_posts');
+add_action('wp_ajax_nopriv_load_more_posts', 'load_more_posts');

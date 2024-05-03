@@ -11,6 +11,9 @@ var btn3 = document.getElementById("CONTACT");
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
+// Get the reference input field
+var referenceInput = document.getElementById("reference");
+
 // When the user clicks the button, CONTACT
 btn.onclick = function () {
   modal.style.display = "block";
@@ -19,6 +22,8 @@ btn.onclick = function () {
 // When the user clicks the button, CONTACT
 btn2.onclick = function () {
   modal.style.display = "block";
+  // Prefill the reference field when btn2 is clicked
+  referenceInput.value = "boiterefphoto";
 };
 
 // When the user clicks the button, CONTACT
