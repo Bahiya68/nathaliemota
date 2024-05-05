@@ -36,6 +36,10 @@
     display:flex;
     position:relative;
     z-index:5;
+    @media screen and (max-width: 1080px) {
+        height:auto;
+        
+      }
  }
 
 .filters {
@@ -49,10 +53,10 @@
         flex: 1;
         padding: 10px;
         border-radius: 5px;
-        border: 1px solid #B8BBC2;
+        //border: 1px solid #B8BBC2;
         background-color: #ffffff;
         cursor: pointer;
-        font-family: 'PoppinsRegular';
+        font-family: "Poppins", monospace;
         font-size: 12px;
         text-transform: uppercase;
         
@@ -85,7 +89,6 @@
         display: flex;
         justify-content: space-between;
         gap: 10px;
-        
         @media screen and (max-width: 1080px) {
             width: auto;
             flex-direction: column;
@@ -100,6 +103,7 @@
             //max-width: 300px;
           }
     }
+
 
 
 //**couleur des filtre au survol

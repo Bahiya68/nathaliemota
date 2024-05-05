@@ -656,6 +656,11 @@ a:-webkit-any-link {
   position: relative;
   z-index: 5;
 }
+@media screen and (max-width: 1080px) {
+  .page-container {
+    height: auto;
+  }
+}
 
 .filters {
   margin-top: 20px;
@@ -668,10 +673,9 @@ a:-webkit-any-link {
   flex: 1;
   padding: 10px;
   border-radius: 5px;
-  border: 1px solid #B8BBC2;
   background-color: #ffffff;
   cursor: pointer;
-  font-family: "PoppinsRegular";
+  font-family: "Poppins", monospace;
   font-size: 12px;
   text-transform: uppercase;
 }
