@@ -1,7 +1,9 @@
 <?php
 $args = array(
+    'orderby' => 'rand',  //ordonner les résultats d'une requête de manière aléatoire
     'post_type' => 'photo', // Type de contenu (article)
     'posts_per_page' => 8, // Nombre d'articles à afficher
+    'paged' => get_query_var('paged') ? get_query_var('paged') : 1,
 );
 
 $query = new WP_Query($args);
