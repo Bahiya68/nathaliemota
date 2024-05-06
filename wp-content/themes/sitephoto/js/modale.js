@@ -23,7 +23,6 @@ btn.onclick = function () {
 btn2.onclick = function () {
   modal.style.display = "block";
   // Prefill the reference field when btn2 is clicked
-  referenceInput.value = "boiterefphoto";
 };
 
 // When the user clicks the button, CONTACT
