@@ -152,8 +152,8 @@ a:-webkit-any-link {
 
 .photo-block {
     width: 564px;
-    height: 495px;
-}
+         height: 495px;
+ }
 
 .photo-title {
     font-size: 14px;
@@ -372,6 +372,7 @@ display: block;
 }
      
 .fullscreen-icon {
+    z-index: 6;
     position: relative;
     top: -95px;
     left: 490px;

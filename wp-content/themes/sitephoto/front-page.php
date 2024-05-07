@@ -8,8 +8,9 @@ global $wp_query; ?>
 <section id="gallerie">
     <?php get_template_part('template-parts/gallerie_photos'); ?>
 </section>
+
 <section id="bouton_charger_plus">
-    <button class="btn__wrapper" id="load-more" data-offset="1" data-posts-per-page="8" data-ajaxurl="<?php echo admin_url('admin-ajax.php'); ?>">
+    <button class="btn__wrapper" id="load-more" data-offset="1" data-ajaxurl="<?php echo admin_url('/'); ?>">
         <a class="btn">Charger plus</a>
     </button>
 </section>

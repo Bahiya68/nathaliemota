@@ -56,12 +56,11 @@ add_action('wp_enqueue_scripts', 'sitephoto_register_assets');
 function charger_plus_de_photos()
 {
     $offset = $_POST['offset'];
-    //$posts_per_page = $_POST['posts_per_page'];
 
     $args = array(
-        'orderby' => 'rand',
+        'order' => 'ASC',
         'post_type' => 'photo',
-        'posts_per_page' => 12,
+        'posts_per_page' => 8,
         'paged' => $offset + 1,
     );
 
@@ -71,9 +70,10 @@ function charger_plus_de_photos()
         while ($ajaxphoto->have_posts()) :
             $ajaxphoto->the_post();
 ?>
-            <div class="photo-block">
-                <?php get_template_part('/template-parts/photo'); ?>
-            </div>
+<section id="gallerie"><?php get_template_part('template-parts/photo'); ?>
+
+</section>
+
 <?php
         endwhile;
         wp_reset_postdata(); // Réinitialise la requête
