@@ -51,40 +51,37 @@ function sitephoto_register_assets()
 add_action('wp_enqueue_scripts', 'sitephoto_register_assets');
 
 
-
-// Fonction pour charger plus de photos via AJAX
 function charger_plus_de_photos()
 {
-    $offset = $_POST['offset'];
+    if (isset($_POST['offset'])) {
+        $offset = intval($_POST['offset']);
+    } else {
+        $offset = 0;
+    }
 
     $args = array(
-        'order' => 'ASC',
-        'post_type' => 'photo',
+        'order'          => 'ASC',
+        'post_type'      => 'photo',
         'posts_per_page' => 8,
-        'paged' => $offset + 1,
+        'paged'          => $offset + 1,
     );
 
     $ajaxphoto = new WP_Query($args);
 
-    if ($ajaxphoto->have_posts()) :
-        while ($ajaxphoto->have_posts()) :
+    ob_start();
+
+    if ($ajaxphoto->have_posts()) {
+        while ($ajaxphoto->have_posts()) {
             $ajaxphoto->the_post();
-?>
-<section id="gallerie"><?php get_template_part('template-parts/photo'); ?>
-
-</section>
-
-<?php
-        endwhile;
-        wp_reset_postdata(); // Réinitialise la requête
-    else :
-        echo 'No more photos found.';
-    endif;
-
-    wp_die();
+            get_template_part('template-parts/photo');
+        }
+        wp_reset_postdata();
+        $content = ob_get_clean();
+        wp_send_json_success($content);
+    } else {
+        wp_send_json_error('No more photos found.');
+    }
 }
 
-// Action pour les utilisateurs non connectés
 add_action('wp_ajax_nopriv_charger_plus_de_photos', 'charger_plus_de_photos');
-// Action pour les utilisateurs connectés
 add_action('wp_ajax_charger_plus_de_photos', 'charger_plus_de_photos');

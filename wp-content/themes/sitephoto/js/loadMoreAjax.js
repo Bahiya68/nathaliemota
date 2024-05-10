@@ -1,21 +1,28 @@
 console.log("LoadMoreAjax OK");
 
+// Fonction pour charger plus de photos via AJAX
 jQuery(document).ready(function ($) {
-  $("#load-more").on("click", function (e) {
-    e.preventDefault();
-
+  $("#load-more").on("click", function () {
     var offset = $(this).data("offset");
+    var ajaxurl = $(this).data("ajaxurl");
 
     $.ajax({
+      url: ajaxurl,
       type: "POST",
-      url: "./wp-admin/admin-ajax.php",
       data: {
         action: "charger_plus_de_photos",
         offset: offset,
       },
       success: function (response) {
-        $("#bouton_charger_plus").before(response);
-        $("#load-more").data("offset", offset + 1);
+        if (response.success) {
+          $(".gallery-container").append(response.data);
+          $("#load-more").data("offset", offset + 1);
+
+          // Réinitialiser la lightbox pour les nouvelles photos
+          initLightbox();
+        } else {
+          alert("No more photos found.");
+        }
       },
     });
   });

@@ -10,11 +10,23 @@
     margin-bottom: 50px;
     gap: 10px;
 }
+// .gallery-container2 {
+//     display: flex;
+//     flex-wrap: wrap;
+//     flex-direction: row;
+//     //margin: auto;
+//     justify-content: space-around;
+//     //margin-top: 50px;
+//    //margin-bottom: 50px;
+//     gap: 30px;
+// }
 
-.gallery-plus {
+.col2 {
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
 }
+
 
 #bouton_charger_plus {
     display: flex;
@@ -60,5 +72,6 @@
     left: 0%;
     bottom: -6%;
 }
+
 
 
