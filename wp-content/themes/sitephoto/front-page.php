@@ -28,7 +28,9 @@ global $wp_query; ?>
     endif;
     ?>
 </div>
-
+<section id="no-more-photos" style="display: none;">
+    <p>No more photos found.</p>
+</section>
 <section id="bouton_charger_plus">
     <button class="btn__wrapper" id="load-more" data-offset="1" data-ajaxurl="<?php echo admin_url('admin-ajax.php'); ?>">
         <a class="btn">Charger plus</a>

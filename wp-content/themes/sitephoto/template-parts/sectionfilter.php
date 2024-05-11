@@ -1,41 +1,41 @@
 <div class="page-container">
     <!-- Filtrage des photos  -->
     <div class="filters">
-        <form action="">
+        <form action="<?php echo esc_url(home_url('/')); ?>" method="get" id="filter-form">
             <!-- Filtre par Catégorie -->
             <div class="filter1">
-                <select name="categoryfilter" id="category" class="filter-select" onfocus="this.size=5;"
-                    onblur="this.size=0;" onchange="this.size=1; this.blur()">
+                <select name="categoryfilter" id="category" class="filter-select">
                     <option value="">Catégories</option>
                     <?php
-                    // récupération des catégories
+                    // Récupération des catégories
                     $categories = get_terms('categorie');
-                    // récupération de la catégorie actuellement sélectionnée
+                    // Récupération de la catégorie actuellement sélectionnée
                     $selected_category = isset($_GET['categoryfilter']) ? $_GET['categoryfilter'] : '';
-                    // boucle sur les catégories
+                    // Boucle sur les catégories
                     foreach ($categories as $category) {
                     ?>
-                    <option value="<?php echo $category->slug; ?>"
-                        <?php echo $selected_category == $category->slug ? 'selected' : ''; ?>>
-                        <?php echo $category->name; ?></option>
+                        <option value="<?php echo esc_attr($category->slug); ?>" <?php selected($selected_category, $category->slug); ?>>
+                            <?php echo esc_html($category->name); ?>
+                        </option>
                     <?php
                     }
                     ?>
                 </select>
 
+
                 <!-- Filtre par Format -->
-                <select name="formats" id="format" class="filter-select" onfocus="this.size=3;" onblur="this.size=0;"
-                    onchange="this.size=1; this.blur()">
+
+                <select name="formatfilter" id="format" class="filter-select">
                     <option value="">Formats</option>
                     <?php
                     $formats = get_terms('format');
-                    // récupération du format actuellement sélectionné
-                    $selected_format = isset($_GET['formats']) ? $_GET['formats'] : '';
+                    // Récupération du format actuellement sélectionné
+                    $selected_format = isset($_GET['formatfilter']) ? $_GET['formatfilter'] : '';
                     foreach ($formats as $format) {
                     ?>
-                    <option value="<?php echo $format->slug; ?>"
-                        <?php echo $selected_format == $format->slug ? 'selected' : ''; ?>><?php echo $format->name; ?>
-                    </option>
+                        <option value="<?php echo esc_attr($format->slug); ?>" <?php selected($selected_format, $format->slug); ?>>
+                            <?php echo esc_html($format->name); ?>
+                        </option>
                     <?php
                     }
                     ?>
@@ -44,17 +44,13 @@
 
             <!-- Filtre par Ancienneté -->
             <div class="filter2">
-                <select name="orderby" id="orderby" class="filter-select" onfocus="this.size=3;" onblur="this.size=0;"
-                    onchange="this.size=1; this.blur()">
+                <select name="orderby" id="orderby" class="filter-select">
                     <option value="">Trier par</option>
-                    <option value="date_desc"
-                        <?php echo isset($_GET['orderby']) && $_GET['orderby'] == 'date_desc' ? 'selected' : ''; ?>>
+                    <option value="date_desc" <?php selected(isset($_GET['orderby']) && $_GET['orderby'] == 'date_desc'); ?>>
                         Récentes aux plus anciennes</option>
-                    <option value="date_asc"
-                        <?php echo isset($_GET['orderby']) && $_GET['orderby'] == 'date_asc' ? 'selected' : ''; ?>>
+                    <option value="date_asc" <?php selected(isset($_GET['orderby']) && $_GET['orderby'] == 'date_asc'); ?>>
                         Anciennes aux plus récentes</option>
                 </select>
             </div>
         </form>
     </div>
-</div>

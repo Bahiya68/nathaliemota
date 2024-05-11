@@ -33,7 +33,7 @@ function sitephoto_register_assets()
     wp_enqueue_script('modale', get_theme_file_uri() . '/js/modale.js', array('jquery'), '1.0.0', true);
     wp_enqueue_script('single', get_stylesheet_directory_uri() . '/js/single.js', array('jquery'), '1.0.0', true);
     wp_enqueue_script('burger', get_stylesheet_directory_uri() . '/js/menu_Burger.js', array('jquery'), '1.0.0', true);
-    wp_enqueue_script('gallerie', get_stylesheet_directory_uri() . '/js/gallerie_photos.js', array('jquery'), '1.0.0', true);
+    wp_enqueue_script('lightBox', get_stylesheet_directory_uri() . '/js/lightBox.js', array('jquery'), '1.0.0', true);
     wp_enqueue_script('filter', get_stylesheet_directory_uri() . '/js/sectionfilter.js', array('jquery'), '1.0.0', true);
     // Ajout de la bibliothèque jQuery
     wp_enqueue_script('jquery-cdn', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js', array(), '3.7.1', true);
@@ -85,3 +85,60 @@ function charger_plus_de_photos()
 
 add_action('wp_ajax_nopriv_charger_plus_de_photos', 'charger_plus_de_photos');
 add_action('wp_ajax_charger_plus_de_photos', 'charger_plus_de_photos');
+
+
+
+
+function filter_photos()
+{
+    $category = isset($_POST['category']) ? $_POST['category'] : '';
+    $format = isset($_POST['format']) ? $_POST['format'] : '';
+    $orderby = isset($_POST['orderby']) ? $_POST['orderby'] : '';
+
+    $args = array(
+        'post_type' => 'photo',
+        'posts_per_page' => -1,
+        'orderby' => $orderby,
+    );
+
+    // Ajoutez les arguments pour les filtres sélectionnés
+    if (!empty($category)) {
+        $args['tax_query'][] = array(
+            'taxonomy' => 'categorie',
+            'field' => 'slug',
+            'terms' => $category
+        );
+    }
+
+    if (!empty($format)) {
+        $args['tax_query'][] = array(
+            'taxonomy' => 'format',
+            'field' => 'slug',
+            'terms' => $format
+        );
+    }
+
+    $ajaxphoto = new WP_Query($args);
+
+    if ($ajaxphoto->have_posts()) :
+        while ($ajaxphoto->have_posts()) :
+            $ajaxphoto->the_post();
+            get_template_part('template-parts/photo');
+        endwhile;
+        wp_reset_postdata(); // Réinitialise la requête
+    else :
+        echo 'Aucune photo trouvée.';
+    endif;
+
+    wp_die();
+}
+
+add_action('wp_ajax_filter_photos', 'filter_photos');
+add_action('wp_ajax_nopriv_filter_photos', 'filter_photos');
+
+function add_ajax_url()
+{
+    wp_enqueue_script('filter_photos', get_template_directory_uri() . '/js/sectionfilter.js', array('jquery'), null, true);
+    wp_localize_script('filter_photos', 'ajaxurl', admin_url('admin-ajax.php'));
+}
+add_action('wp_enqueue_scripts', 'add_ajax_url');

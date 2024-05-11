@@ -21,7 +21,7 @@ jQuery(document).ready(function ($) {
           // Réinitialiser la lightbox pour les nouvelles photos
           initLightbox();
         } else {
-          alert("No more photos found.");
+          $("#no-more-photos").show(); // Afficher le message
         }
       },
     });
