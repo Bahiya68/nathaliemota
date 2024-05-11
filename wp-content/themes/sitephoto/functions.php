@@ -104,6 +104,7 @@ function my_photo_filter()
         'post_type' => 'photo', // Le type de post des photos
         'posts_per_page' => -1, // Nombre de photos à afficher (-1 pour toutes)
         'orderby' => $orderby, // Tri
+        'order' => 'DESC', // Par défaut, tri par date du plus récent au plus ancien
         'tax_query' => array(
             'relation' => 'AND',
         ),
@@ -126,28 +127,34 @@ function my_photo_filter()
         );
     }
 
-// Requête pour récupérer les photos
-$query = new WP_Query($args);
-
-// Affichage des photos
-if ($query->have_posts()) {
-    while ($query->have_posts()) {
-        $query->the_post();
-        ?>
-<div class="photo">
-
-    <?php if (has_post_thumbnail()) : ?>
-
-    <?php get_template_part('template-parts/photo'); ?>
-
-    <?php endif; ?>
-</div>
-<?php
+    // Ajoutez l'ordre à la requête en fonction de la valeur de 'orderby'
+    if ($orderby == 'date_desc') {
+        $args['orderby'] = 'date';
+        $args['order'] = 'DESC';
+    } elseif ($orderby == 'date_asc') {
+        $args['orderby'] = 'date';
+        $args['order'] = 'ASC';
     }
-    wp_reset_postdata();
-} else {
-    echo 'Aucune photo trouvée';
-}
+
+    // Requête pour récupérer les photos
+    $query = new WP_Query($args);
+
+    // Affichage des photos
+    if ($query->have_posts()) {
+        while ($query->have_posts()) {
+            $query->the_post();
+?>
+            <div class="photo">
+                <?php if (has_post_thumbnail()) : ?>
+                    <?php get_template_part('template-parts/photo'); ?>
+                <?php endif; ?>
+            </div>
+<?php
+        }
+        wp_reset_postdata();
+    } else {
+        echo 'Aucune photo trouvée';
+    }
 
     wp_die(); // Fin de la requête AJAX
 }
