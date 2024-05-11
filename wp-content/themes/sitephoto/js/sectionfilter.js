@@ -1,5 +1,4 @@
 console.log("Filter OK");
-
 jQuery(document).ready(function ($) {
   // Événement de changement sur les éléments de formulaire
   $(".filter-select").on("change", function () {
@@ -25,4 +24,18 @@ jQuery(document).ready(function ($) {
       },
     });
   });
+});
+
+(function ($) {
+  $(document).ready(function () {
+    // Initialisation de Select2 pour les sélecteurs
+    $("#annee").select2();
+    $("#categorie").select2();
+    $("#format").select2();
+  });
+});
+
+// Select2 couleurs (filtres photos de la page d'accueil)
+window.addEventListener("load", () => {
+  $("select").select2();
 });

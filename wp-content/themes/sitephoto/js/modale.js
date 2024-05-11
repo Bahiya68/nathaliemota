@@ -22,7 +22,18 @@ btn.onclick = function () {
 // When the user clicks the button, CONTACT
 btn2.onclick = function () {
   modal.style.display = "block";
-  // Prefill the reference field when btn2 is clicked
+};
+
+btn2.onclick = function () {
+  // Afficher la modale
+  modal.style.display = "block";
+
+  // Préremplir le champ de référence de la photo
+  var refPhotoField = document.querySelector(
+    '.boiterefphoto input[type="text"]'
+  );
+  var refPhotoValue = document.querySelector(".ref-val").textContent;
+  refPhotoField.value = refPhotoValue;
 };
 
 // When the user clicks the button, CONTACT
