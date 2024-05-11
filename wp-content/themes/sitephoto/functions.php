@@ -86,55 +86,71 @@ function charger_plus_de_photos()
 add_action('wp_ajax_nopriv_charger_plus_de_photos', 'charger_plus_de_photos');
 add_action('wp_ajax_charger_plus_de_photos', 'charger_plus_de_photos');
 
+add_action('wp_ajax_my_photo_filter', 'my_photo_filter');
+add_action('wp_ajax_nopriv_my_photo_filter', 'my_photo_filter');
 
 
 
-function filter_photos()
+
+function my_photo_filter()
 {
-    $category = isset($_POST['category']) ? $_POST['category'] : '';
-    $format = isset($_POST['format']) ? $_POST['format'] : '';
-    $orderby = isset($_POST['orderby']) ? $_POST['orderby'] : '';
+    // Récupère les valeurs des filtres
+    $category = isset($_GET['categoryfilter']) ? $_GET['categoryfilter'] : '';
+    $format = isset($_GET['formatfilter']) ? $_GET['formatfilter'] : '';
+    $orderby = isset($_GET['orderby']) ? $_GET['orderby'] : '';
 
+    // Arguments de la requête pour récupérer les photos
     $args = array(
-        'post_type' => 'photo',
-        'posts_per_page' => -1,
-        'orderby' => $orderby,
+        'post_type' => 'photo', // Le type de post des photos
+        'posts_per_page' => -1, // Nombre de photos à afficher (-1 pour toutes)
+        'orderby' => $orderby, // Tri
+        'tax_query' => array(
+            'relation' => 'AND',
+        ),
     );
 
-    // Ajoutez les arguments pour les filtres sélectionnés
+    // Ajoute les filtres de catégorie et de format à la requête
     if (!empty($category)) {
         $args['tax_query'][] = array(
             'taxonomy' => 'categorie',
-            'field' => 'slug',
-            'terms' => $category
+            'field'    => 'slug',
+            'terms'    => $category,
         );
     }
 
     if (!empty($format)) {
         $args['tax_query'][] = array(
             'taxonomy' => 'format',
-            'field' => 'slug',
-            'terms' => $format
+            'field'    => 'slug',
+            'terms'    => $format,
         );
     }
 
-    $ajaxphoto = new WP_Query($args);
+// Requête pour récupérer les photos
+$query = new WP_Query($args);
 
-    if ($ajaxphoto->have_posts()) :
-        while ($ajaxphoto->have_posts()) :
-            $ajaxphoto->the_post();
-            get_template_part('template-parts/photo');
-        endwhile;
-        wp_reset_postdata(); // Réinitialise la requête
-    else :
-        echo 'Aucune photo trouvée.';
-    endif;
+// Affichage des photos
+if ($query->have_posts()) {
+    while ($query->have_posts()) {
+        $query->the_post();
+        ?>
+<div class="photo">
 
-    wp_die();
+    <?php if (has_post_thumbnail()) : ?>
+
+    <?php get_template_part('template-parts/photo'); ?>
+
+    <?php endif; ?>
+</div>
+<?php
+    }
+    wp_reset_postdata();
+} else {
+    echo 'Aucune photo trouvée';
 }
 
-add_action('wp_ajax_filter_photos', 'filter_photos');
-add_action('wp_ajax_nopriv_filter_photos', 'filter_photos');
+    wp_die(); // Fin de la requête AJAX
+}
 
 function add_ajax_url()
 {
