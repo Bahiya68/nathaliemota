@@ -81,11 +81,22 @@
         </div>
         <div class="likephoto">
             <?php
+
+            $term_list = wp_get_post_terms($post->ID, 'categorie', array("fields" => "ids")); // Récupère les termes de la taxonomie 'categorie' associés au post
+
             $args = array(
                 'orderby' => 'rand', //ordonner les résultats d'une requête de manière aléatoire
                 'post_type' => 'photo', // Type de contenu (article)
                 'posts_per_page' => 2, // Nombre d'articles à afficher
-
+                'tax_query' => array(
+                    array(
+                        'taxonomy' => 'categorie', // Taxonomie à interroger
+                        'field' => 'id', // Champs à comparer (id)
+                        'terms' => $term_list, // Liste des termes à rechercher
+                        //'operator' => 'IN' // Opérateur à utiliser (dans la liste)
+                    )
+                ),
+                'post__not_in' => array($post->ID) // Exclure le post actuel
             );
             $query = new WP_Query($args);
             if ($query->have_posts()) :
