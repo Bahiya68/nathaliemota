@@ -14,10 +14,16 @@
                     // Boucle sur les catégories
                     foreach ($categories as $category) {
                     ?>
+<<<<<<< HEAD
                     <option value="<?php echo esc_attr($category->slug); ?>"
                         <?php selected($selected_category, $category->slug); ?>>
                         <?php echo esc_html($category->name); ?>
                     </option>
+=======
+                        <option value="<?php echo esc_attr($category->slug); ?>" <?php selected($selected_category, $category->slug); ?>>
+                            <?php echo esc_html($category->name); ?>
+                        </option>
+>>>>>>> 367f88b9e50409394df64dea87470bb0df4c7ef9
                     <?php
                     }
                     ?>
@@ -34,10 +40,16 @@
                     $selected_format = isset($_GET['formatfilter']) ? $_GET['formatfilter'] : '';
                     foreach ($formats as $format) {
                     ?>
+<<<<<<< HEAD
                     <option value="<?php echo esc_attr($format->slug); ?>"
                         <?php selected($selected_format, $format->slug); ?>>
                         <?php echo esc_html($format->name); ?>
                     </option>
+=======
+                        <option value="<?php echo esc_attr($format->slug); ?>" <?php selected($selected_format, $format->slug); ?>>
+                            <?php echo esc_html($format->name); ?>
+                        </option>
+>>>>>>> 367f88b9e50409394df64dea87470bb0df4c7ef9
                     <?php
                     }
                     ?>
@@ -48,11 +60,17 @@
             <div class="filter2">
                 <select name="orderby" id="orderby" class="filter-select">
                     <option value="">Trier par</option>
+<<<<<<< HEAD
                     <option value="date_desc"
                         <?php selected(isset($_GET['orderby']) && $_GET['orderby'] == 'date_desc'); ?>>
                         Récentes aux plus anciennes</option>
                     <option value="date_asc"
                         <?php selected(isset($_GET['orderby']) && $_GET['orderby'] == 'date_asc'); ?>>
+=======
+                    <option value="date_desc" <?php selected(isset($_GET['orderby']) && $_GET['orderby'] == 'date_desc'); ?>>
+                        Récentes aux plus anciennes</option>
+                    <option value="date_asc" <?php selected(isset($_GET['orderby']) && $_GET['orderby'] == 'date_asc'); ?>>
+>>>>>>> 367f88b9e50409394df64dea87470bb0df4c7ef9
                         Anciennes aux plus récentes</option>
                 </select>
             </div>

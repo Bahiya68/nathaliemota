@@ -25,8 +25,7 @@
             <p>ANNÉE : <?php echo get_the_date('Y'); ?></p>
         </div>
         <div class="photos-container">
-            <img class="Card-image " src="<?php echo get_the_post_thumbnail_url(); ?>"
-                alt="<?php echo get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true); ?>">
+            <img class="Card-image " src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php echo get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true); ?>">
         </div>
     </div>
 
@@ -46,6 +45,7 @@
                 <button id="myBtn">Contact</button>
             </div> -->
         </div>
+<<<<<<< HEAD
         <section class="contact-carrousel">
             <div class="contact-btn">
                 <h4>Cette photo vous intéresse ?</h4>
@@ -97,6 +97,32 @@
                         </a>
 
                         <?php endif; ?>
+=======
+        <div class="part2">
+            <div class="photominiature">
+                <div class="miniimg">
+                    <div class=" fleche_nav">
+                        <div class="flechegauche_nav">
+                            <?php if (get_previous_post()) { ?>
+                                <a href="<?php echo get_the_permalink($previous) ?>">
+                                    <img src="<?php echo get_the_post_thumbnail_url($previous) ?>" alt="">
+                                    <div>
+                                        <img src="<?php echo get_stylesheet_directory_uri() . './assets/images/flechegauche.svg'; ?>" alt="flechegauche">
+                                    </div>
+                                </a>
+                            <?php } ?>
+                        </div>
+                        <div class="flechedroite_nav">
+                            <?php if (get_next_post()) { ?>
+                                <a href="<?php echo get_the_permalink($next) ?>">
+                                    <img src="<?php echo get_the_post_thumbnail_url($next) ?>" alt="">
+                                    <div>
+                                        <img src="<?php echo get_stylesheet_directory_uri() . './assets/images/flechedroite.svg'; ?>" alt="flechedroite">
+                                    </div>
+                                </a>
+                            <?php } ?>
+                        </div>
+>>>>>>> 367f88b9e50409394df64dea87470bb0df4c7ef9
                     </div>
                 </div>
             </div>
@@ -124,7 +150,11 @@
                         //'operator' => 'IN' // Opérateur à utiliser (dans la liste)
                     )
                 ),
+<<<<<<< HEAD
                 //'post__not_in' => array($post->ID) // Exclure le post actuel
+=======
+                'post__not_in' => array($post->ID) // Exclure le post actuel
+>>>>>>> 367f88b9e50409394df64dea87470bb0df4c7ef9
             );
             $query = new WP_Query($args);
             if ($query->have_posts()) :
@@ -132,9 +162,15 @@
                     $query->the_post();
 
             ?>
+<<<<<<< HEAD
             <div class="photo-block">
                 <?php get_template_part('/template-parts/photo'); ?>
             </div>
+=======
+                    <div class="photo-block">
+                        <?php get_template_part('/template-parts/photo'); ?>
+                    </div>
+>>>>>>> 367f88b9e50409394df64dea87470bb0df4c7ef9
             <?php
                 endwhile;
                 wp_reset_postdata(); // Réinitialise la requête

@@ -376,10 +376,16 @@ a:-webkit-any-link {
   line-height: normal;
 }
 
+<<<<<<< HEAD
 @media (max-width: 970px) {
   .part1 {
     flex-direction: column;
   }
+=======
+.miniimg img {
+  max-width: 100px;
+  max-height: 90px;
+>>>>>>> 367f88b9e50409394df64dea87470bb0df4c7ef9
 }
 
 .contact-carrousel {
@@ -783,6 +789,7 @@ a:-webkit-any-link {
   }
 }
 
+<<<<<<< HEAD
 .select2-container--open .select2-dropdown--below {
   margin-top: 25px;
 }
@@ -792,6 +799,13 @@ a:-webkit-any-link {
   width: 100%;
   padding: 30px;
 }
+=======
+.filters {
+  margin-top: 20px;
+  width: 100%;
+  padding: 30px;
+}
+>>>>>>> 367f88b9e50409394df64dea87470bb0df4c7ef9
 .filters select {
   width: 100%;
   max-width: 230px;
