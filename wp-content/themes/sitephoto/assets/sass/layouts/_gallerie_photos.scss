@@ -1,6 +1,6 @@
 //******Gallerie
 
-#gallerie {
+.gallery-container {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -11,7 +11,15 @@
     gap: 10px;
 }
 
-.eye-link {
+
+#bouton_charger_plus {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.eye-icon {
     position: relative;
     z-index: 1;
     left: 46%;
@@ -19,8 +27,6 @@
     width: 50%;
     display: none;
 }
-
-
 
 .photopost img {
     width: 564px;
@@ -33,7 +39,7 @@
 
 .lightbox-container .lightbox_categorie {
     right: 0%;
-    bottom: -4%;
+    bottom: -6%;
 }
 
 .lightbox-container .lightbox_text {
@@ -48,6 +54,13 @@
 
 .lightbox-container .lightbox_reference {
     left: 0%;
-    bottom: -4%;
+    bottom: -6%;
 }
 
+
+#no-more-photos {
+    display: flex;
+    justify-content: center;
+    font-family: "Space Mono";
+    font-weight:bold;
+}

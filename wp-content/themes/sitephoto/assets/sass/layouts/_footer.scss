@@ -1,5 +1,5 @@
 footer {
-    width: 1440px;
+    max-width: 1440px;
     height: 40px;
     //position: fixed;
     bottom: 0;
@@ -9,8 +9,9 @@ footer {
 }
 
 
+
 .footerMenu {
-    height: 40px;
+   
     display: flex;
     flex-direction:row ;
     justify-content: space-evenly;
@@ -21,9 +22,9 @@ footer {
     align-items: center;
     flex-wrap: wrap;
 
+
         li {
             list-style-type: none;
-            
 
             a {
                 text-decoration: none;
@@ -37,3 +38,13 @@ footer {
     }
 }
 
+
+
+
+@media (max-width: 960px) {
+     .footerMenu {
+         display: flex;
+         flex-direction: column;
+         gap:15px;
+     }
+ }

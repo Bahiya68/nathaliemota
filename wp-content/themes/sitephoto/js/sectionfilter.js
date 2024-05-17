@@ -1,83 +1,41 @@
 console.log("Filter OK");
+jQuery(document).ready(function ($) {
+  // Événement de changement sur les éléments de formulaire
+  $(".filter-select").on("change", function () {
+    // Récupère les données du formulaire
+    var formData = $("#filter-form").serialize();
+    console.log(formData); // Vérifiez les données dans la console
 
-// Change option 1 selected
-const label = document.querySelector(".dropdown__filter-selected");
-const options = Array.from(
-  document.querySelectorAll(".dropdown__select-option")
-);
+    // Effectue la requête AJAX
+    $.ajax({
+      type: "GET",
+      url: ajaxurl,
+      data: formData + "&action=my_photo_filter", // Ajoutez l'action pour WordPress
+      success: function (response) {
+        // Met à jour la liste des photos avec la réponse du serveur
+        $(".gallery-container").html(response);
 
-options.forEach((option) => {
-  option.addEventListener("click", () => {
-    label.textContent = option.textContent;
+        // Réinitialiser la lightbox pour les nouvelles photos
+        initLightbox();
+      },
+
+      error: function (xhr, status, error) {
+        console.error(xhr.responseText); // Affichez l'erreur dans la console
+      },
+    });
   });
 });
 
-// Close dropdown onclick outside
-document.addEventListener("click", (e) => {
-  const toggle = document.querySelector(".dropdown__switch");
-  const element = e.target;
-
-  if (element == toggle) return;
-
-  const isDropdownChild = element.closest(".dropdown__filter");
-
-  if (!isDropdownChild) {
-    toggle.checked = false;
-  }
-});
-
-//******* Change option 2 selected
-
-// Change option 1 selected
-const label2 = document.querySelector(".dropdown2__filter-selected2");
-const options2 = Array.from(
-  document.querySelectorAll(".dropdown2__select-option2")
-);
-
-options2.forEach((option) => {
-  option.addEventListener("click", () => {
-    label2.textContent2 = option.textContent2;
+(function ($) {
+  $(document).ready(function () {
+    // Initialisation de Select2 pour les sélecteurs
+    $("#annee").select2();
+    $("#categorie").select2();
+    $("#format").select2();
   });
 });
 
-// Close dropdown onclick outside
-document.addEventListener("click", (e) => {
-  const toggle2 = document.querySelector(".dropdown2__switch2");
-  const element2 = e.target;
-
-  if (element2 == toggle2) return;
-
-  const isDropdownChild = element2.closest(".dropdown2__filter2");
-
-  if (!isDropdownChild) {
-    toggle2.checked = false;
-  }
-});
-
-//******* Change option 3 selected
-
-// Change option 1 selected
-const label3 = document.querySelector(".dropdown3__filter-selected3");
-const options3 = Array.from(
-  document.querySelectorAll(".dropdown3__select-option3")
-);
-
-options3.forEach((option) => {
-  option.addEventListener("click", () => {
-    label3.textContent3 = option.textContent3;
-  });
-});
-
-// Close dropdown onclick outside
-document.addEventListener("click", (e) => {
-  const toggle3 = document.querySelector(".dropdown3__switch3");
-  const element3 = e.target;
-
-  if (element3 == toggle3) return;
-
-  const isDropdownChild = element3.closest(".dropdown3__filter3");
-
-  if (!isDropdownChild) {
-    toggle3.checked = false;
-  }
+// Select2 couleurs (filtres photos de la page d'accueil)
+window.addEventListener("load", () => {
+  $("select").select2();
 });

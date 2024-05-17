@@ -30,6 +30,18 @@
         -webkit-text-stroke: 3px #ffffff;
         -webkit-text-fill-color: transparent;
         z-index: 1;
+        @media screen and (max-width: 1010px) {
+            font-size: 76px;
+          }
+        @media screen and (max-width: 800px) {
+            font-size: 56px;
+          }
+        @media screen and (max-width: 600px) {
+            font-size: 46px;
+          }
+        @media screen and (max-width: 500px) {
+            font-size: 36px;
+          }
     }
 }
 

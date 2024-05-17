@@ -24,7 +24,7 @@
 
 a:-webkit-any-link {
     color:black;
-    cursor:auto;
+    //cursor:auto;
     text-decoration: none;
 }
 
@@ -97,22 +97,113 @@ a:-webkit-any-link {
 }
 
 
-.miniimg img {
-    max-width: 81px;
-    max-height: 71px;
+
+
+.part1 {
+    @media (max-width: 970px){
+        flex-direction: column;
+      }
+}
+
+.contact-carrousel {
+    display: flex;
+    height: 118px;
+    width: 100%;
+    justify-content: space-between;
+    border-bottom: 2px solid black;
+    @media screen and (max-width: 600px) {
+      flex-direction: column;
+    }
+  }
+
+  .contact-btn {
+    display: flex;
+    align-items: center;
+    @media screen and (max-width: 600px) {
+      flex-direction: column;
+    }
+  }
+
+  .contact-btn h4{
+    font-family: "PoppinsRegular";
+    font-size: 14px;
+    font-weight: 400;
+    }
+
+  #myBtn {
+    font-family: "Space Mono";
+    font-size: 12px;
+    font-weight: 400;
+    margin-left: 80px;
+    padding: 15px 90px;
+    border: 2px solid transparent;
+    background-color: #D8D8D8;
+    cursor: pointer;
+    @media screen and (max-width: 600px) {
+      margin-right: 25%;
+      padding: 10px 30px; 
+  }
+  }
+
+  #myBtn:hover {
+    border: 2px solid black;
+  }
+
+// partie carrousel miniature
+.interaction-photo {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    padding-bottom: 1em;
+    height: 118px;
+    &__navigation {
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column-reverse;
+        width: 6%;
+        .div-preview {
+            position: relative;
+            height: 8em;
+            .preview {
+                img {
+                  //margin-top: 20px;
+                  object-fit: contain;
+                  //max-height: 150px;
+                  width: 105%;
+                }
+            }
+            .previous-image, .next-image {
+                visibility: hidden;
+                position: absolute;
+            }
+        }
+        .arrows {
+            display: flex;
+            justify-content: space-between;
+        }
+        @media screen and (max-width: 600px) {
+          display: none; // Masque .interaction-photo__navigation en mode mobile
+        }
+    }
+    @media screen and (max-width: 600px) {
+      display: none; // Masque .interaction-photo en mode mobile
+    }
+}
+
+
+.previous-image, .next-image {
+    visibility: hidden;
+}
+
+.arrows a:hover .previous-image,
+.arrows a:hover .next-image {
+    visibility: visible;
+}
+
+.avis {
+    display: flex;
     
 }
-
-.fleche_nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.autrechoix {
-    font-weight: 400;
-}
-
 
 //*****Gallerie
 
@@ -137,6 +228,7 @@ a:-webkit-any-link {
 
 
 .photo-overlay {
+    
     z-index: 1;
     position: relative;
     left: 0;
@@ -151,8 +243,8 @@ a:-webkit-any-link {
 
 .photo-block {
     width: 564px;
-    height: 495px;
-}
+         height: 495px;
+ }
 
 .photo-title {
     font-size: 14px;
@@ -177,10 +269,14 @@ a:-webkit-any-link {
     text-transform: uppercase;
 }
 
+.wpcf7-text {
+    text-transform: uppercase;
+}
+
 
 .photo-block:hover .photo-title,
 .photo-block:hover .photo-categorie,
-.photo-block:hover .eye-link,
+.photo-block:hover .eye-icon,
 .photo-block:hover .fullscreen-icon {
 display: block;
 }
@@ -191,6 +287,13 @@ display: block;
     gap: 10px;
 }
 
+.likephoto {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 1440px;
+    justify-content: center;
+}
 
 //******Light Box
 
@@ -226,9 +329,6 @@ display: block;
      z-index: 1000;
 }
 
-.modal-content {
-     width: 100%;
-}
  
 
 .modalscale {
@@ -364,6 +464,7 @@ display: block;
 }
      
 .fullscreen-icon {
+    z-index: 6;
     position: relative;
     top: -95px;
     left: 490px;
@@ -371,3 +472,9 @@ display: block;
     cursor: pointer;
     display: none;
 }
+
+#myBtn:hover {
+    background-color: black;
+    color: #fff;
+}
+

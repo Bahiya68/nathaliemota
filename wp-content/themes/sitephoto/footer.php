@@ -1,4 +1,4 @@
-<footer>
+<footer id="menu-footer">
     <nav>
         <?php get_template_part('/template-parts/modale'); ?>
         <?php
@@ -12,7 +12,7 @@
         );
         ?>
     </nav>
-
+    <?php get_template_part('/template-parts/lightbox'); ?>
 </footer>
 </div>
 <?php wp_footer(); ?>
