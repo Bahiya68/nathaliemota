@@ -42,10 +42,7 @@ function sitephoto_register_assets()
     wp_enqueue_script('select2-js', 'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js', array('jquery'), '', true);
     // Affichage des images suppplémentaires "charger plus" et filtres avec script AJAX
     wp_enqueue_script('loadMoreAjax', get_template_directory_uri() . '/js/loadMoreAjax.js', array('jquery'), '1.0.0', true);
-<<<<<<< HEAD
     wp_enqueue_script('miniature', get_template_directory_uri() . '/js/miniature.js', array('jquery'), '1.0.0', true);
-=======
->>>>>>> 367f88b9e50409394df64dea87470bb0df4c7ef9
     // // Passer l'objet ajax_params au script
     // wp_localize_script('loadMoreAjax', 'loadMoreAjax_js', 'ajax_params', array(
     //     'ajax_url' => admin_url('admin-ajax.php'),
@@ -100,12 +97,6 @@ add_action('wp_ajax_charger_plus_de_photos', 'charger_plus_de_photos');
 
 
 
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> 367f88b9e50409394df64dea87470bb0df4c7ef9
 function my_photo_filter()
 {
     // Récupère les valeurs des filtres

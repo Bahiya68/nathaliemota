@@ -11,8 +11,7 @@
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    z-index: 6;
-    
+    //z-index: 6;
 }
 
 #myModal {
@@ -31,18 +30,12 @@
      background-color: #fefefe;
      margin: auto;
      //border: 1px solid #888;
-     width: 100%;
+     width: 80%;
      max-width: 600px;
      height: auto;
      border: 5px solid black;
-     @media (max-width: 600px) {
-        width: 80%;
-    }
 }
 
-// .boite {
-    
-// }
 .champ {
     display: flex;
     flex-direction: column;

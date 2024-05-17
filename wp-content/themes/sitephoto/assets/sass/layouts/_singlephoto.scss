@@ -97,7 +97,6 @@ a:-webkit-any-link {
 }
 
 
-<<<<<<< HEAD
 
 
 .part1 {
@@ -203,11 +202,6 @@ a:-webkit-any-link {
 
 .avis {
     display: flex;
-=======
-.miniimg img {
-    max-width: 100px;
-    max-height: 90px;
->>>>>>> 367f88b9e50409394df64dea87470bb0df4c7ef9
     
 }
 
@@ -335,6 +329,9 @@ display: block;
      z-index: 1000;
 }
 
+.modal-content {
+     width: 100%;
+}
  
 
 .modalscale {

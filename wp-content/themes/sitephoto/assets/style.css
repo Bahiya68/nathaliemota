@@ -40,6 +40,7 @@ header .siteNavigation {
 @media (max-width: 640px) {
   header .siteNavigation {
     justify-content: center;
+    flex-direction: column;
   }
 }
 header .siteNavigation .siteNavigation__logo img {
@@ -49,8 +50,9 @@ header .siteNavigation .siteNavigation__logo img {
 }
 @media (max-width: 640px) {
   header .siteNavigation .siteNavigation__logo img {
-    max-width: 200px;
+    width: 200px;
     margin-left: 0px;
+    margin-bottom: 10px;
   }
 }
 header .siteNavigation .siteNavigation__menu {
@@ -114,7 +116,6 @@ header .siteNavigation .siteNavigation__menu .navMenu li a:hover {
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0, 0, 0); /* Fallback color */
   background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
-  z-index: 6;
 }
 
 #myModal {
@@ -132,15 +133,10 @@ header .siteNavigation .siteNavigation__menu .navMenu li a:hover {
 .modal-content {
   background-color: #fefefe;
   margin: auto;
-  width: 100%;
+  width: 80%;
   max-width: 600px;
   height: auto;
   border: 5px solid black;
-}
-@media (max-width: 600px) {
-  .modal-content {
-    width: 80%;
-  }
 }
 
 .champ {
@@ -376,16 +372,10 @@ a:-webkit-any-link {
   line-height: normal;
 }
 
-<<<<<<< HEAD
 @media (max-width: 970px) {
   .part1 {
     flex-direction: column;
   }
-=======
-.miniimg img {
-  max-width: 100px;
-  max-height: 90px;
->>>>>>> 367f88b9e50409394df64dea87470bb0df4c7ef9
 }
 
 .contact-carrousel {
@@ -607,6 +597,10 @@ a:-webkit-any-link {
   z-index: 1000;
 }
 
+.modal-content {
+  width: 100%;
+}
+
 .modalscale {
   transform: scale(0);
   opacity: 0;
@@ -789,7 +783,6 @@ a:-webkit-any-link {
   }
 }
 
-<<<<<<< HEAD
 .select2-container--open .select2-dropdown--below {
   margin-top: 25px;
 }
@@ -799,13 +792,6 @@ a:-webkit-any-link {
   width: 100%;
   padding: 30px;
 }
-=======
-.filters {
-  margin-top: 20px;
-  width: 100%;
-  padding: 30px;
-}
->>>>>>> 367f88b9e50409394df64dea87470bb0df4c7ef9
 .filters select {
   width: 100%;
   max-width: 230px;

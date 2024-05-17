@@ -58,11 +58,7 @@
             }
         ]
     ],
-<<<<<<< HEAD
     "menu_order": 2,
-=======
-    "menu_order": -1,
->>>>>>> 367f88b9e50409394df64dea87470bb0df4c7ef9
     "position": "normal",
     "style": "default",
     "label_placement": "top",
@@ -71,9 +67,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-<<<<<<< HEAD
     "modified": 1715582432
-=======
-    "modified": 1714396401
->>>>>>> 367f88b9e50409394df64dea87470bb0df4c7ef9
 }

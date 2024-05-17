@@ -15,20 +15,25 @@ document.addEventListener("DOMContentLoaded", (event) => {
   // Get the <span> element that closes the modal
   var span = document.getElementsByClassName("close")[0];
 
-  // When the user clicks the button, CONTACT
-  btn.onclick = function () {
-    modal.style.display = "block";
-  };
+  // Get the reference input field
+  var referenceInput = document.getElementById("reference");
 
-  // When the user clicks the button, CONTACT
-  btn2.onclick = function () {
+  // Function to open the modal and prefill the reference field if necessary
+  function openModal() {
     modal.style.display = "block";
-  };
 
-  // When the user clicks the button, CONTACT
-  btn3.onclick = function () {
-    modal.style.display = "block";
-  };
+    if (referenceInput) {
+      var refPhotoValue = document.querySelector(".ref-val").textContent;
+      if (refPhotoField) {
+        refPhotoField.value = refPhotoValue;
+      }
+    }
+  }
+
+  // Add event listeners to buttons
+  if (btn) btn.onclick = openModal;
+  if (btn2) btn2.onclick = openModal;
+  if (btn3) btn3.onclick = openModal;
 
   // When the user clicks on <span> (x), close the modal
   if (span) {
@@ -43,4 +48,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
       modal.style.display = "none";
     }
   };
+
+  // Préremplir le champ de référence de la photo
+  var refPhotoField = document.querySelector(
+    '.boiterefphoto input[type="text"]'
+  );
+  var refPhotoValue = document.querySelector(".ref-val").textContent;
+  refPhotoField.value = refPhotoValue;
 });

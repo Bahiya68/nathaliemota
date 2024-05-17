@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright (C) 2014-2023 ServMask Inc.
+ * Copyright (C) 2014-2018 ServMask Inc.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,23 +23,10 @@
  * ╚══════╝╚══════╝╚═╝  ╚═╝  ╚═══╝  ╚═╝     ╚═╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	die( 'Kangaroos cannot jump here' );
-}
-?>
+class Ai1wm_Recursive_Newline_Filter extends RecursiveFilterIterator {
 
-<div class="error">
-	<p>
-		<?php
-		printf(
-			__(
-				'All-in-One WP Migration is not able to create <strong>%s</strong> file. ' .
-				'Try to change permissions of the parent folder or send us an email at ' .
-				'<a href="mailto:support@servmask.com">support@servmask.com</a> for assistance.',
-				AI1WM_PLUGIN_NAME
-			),
-			AI1WM_BACKUPS_INDEX_HTML
-		)
-		?>
-	</p>
-</div>
+	public function accept() {
+		return strpos( $this->getInnerIterator()->getSubPathname(), "\n" ) === false &&
+			strpos( $this->getInnerIterator()->getSubPathname(), "\r" ) === false;
+	}
+}
