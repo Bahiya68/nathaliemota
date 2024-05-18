@@ -40,6 +40,7 @@ header .siteNavigation {
 }
 header .siteNavigation .siteNavigation__logo img {
   max-width: 216px;
+  height: 14px;
   align-items: center;
   margin-left: 145px;
 }
@@ -439,14 +440,15 @@ a:-webkit-any-link {
   display: flex;
   justify-content: flex-end;
   flex-direction: column-reverse;
-  width: 6%;
+  width: 10%;
 }
 .interaction-photo__navigation .div-preview {
   position: relative;
-  height: 8em;
+  height: 20em;
 }
 .interaction-photo__navigation .div-preview .preview img {
   object-fit: contain;
+  max-height: 110px;
   width: 105%;
 }
 .interaction-photo__navigation .div-preview .previous-image, .interaction-photo__navigation .div-preview .next-image {
@@ -846,6 +848,12 @@ a:-webkit-any-link {
   justify-content: flex-end;
   max-width: 250px;
 }
+@media screen and (max-width: 1080px) {
+  .filter2 {
+    width: auto;
+  }
+}
+
 /* CSS pour personnaliser Select2 */
 .select2-dropdown .select2-search--dropdown .select2-search__field {
   display: none;

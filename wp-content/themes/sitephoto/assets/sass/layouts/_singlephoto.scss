@@ -163,15 +163,15 @@ a:-webkit-any-link {
         display: flex;
         justify-content: flex-end;
         flex-direction: column-reverse;
-        width: 6%;
+        width: 10%;
         .div-preview {
             position: relative;
-            height: 8em;
+            height: 20em;
             .preview {
                 img {
                   //margin-top: 20px;
                   object-fit: contain;
-                  //max-height: 150px;
+                  max-height: 110px;
                   width: 105%;
                 }
             }
