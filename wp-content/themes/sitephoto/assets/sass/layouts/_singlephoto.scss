@@ -210,26 +210,6 @@ a:-webkit-any-link {
 
 //*****Gallerie
 
-.card_photos {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: space-evenly;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.photo-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    &:hover {
-        opacity: 0.5;
-    }
-}
-
-
 .photo-overlay {
     z-index: 1;
     position: relative;
@@ -274,10 +254,21 @@ a:-webkit-any-link {
     text-transform: uppercase;
 }
 
-.wpcf7-text {
-    text-transform: uppercase;
+
+.eye-icon {
+    position: relative;
+    z-index: 1;
+    left: 46%;
+    top: 18vh;
+    width: 50%;
+    display: none;
 }
 
+.photopost img {
+    width: 564px;
+    height: 495px;
+    object-fit: cover;
+}
 
 .photo-block:hover .photo-title,
 .photo-block:hover .photo-categorie,
@@ -299,6 +290,46 @@ display: block;
     max-width: 1440px;
     justify-content: center;
 }
+
+@media screen and (max-width: 650px) {
+    .photo-block {
+        width: 50%;
+        //height: 495px;
+    }
+    .photopost img,
+    .photo-block{
+        width: 317px;
+        height: 278px;
+    }
+    .photo-overlay {
+        bottom: 295px;
+        width: 317px;
+        height: 278px;
+    }
+    .eye-icon {
+        top: 7vh;
+        left: 42%;
+        }
+    .photo-categorie {
+        left: 225px;
+        top: 225px;
+        }
+    .photo-title {
+        top: 260px;
+    }
+    .fullscreen-icon {
+        left: 245px !important;
+    }
+    .modal-content {
+        max-width: 305px;
+    }
+    .boite img {
+        max-width: 305px;
+    }
+}
+    
+
+
 
 //******Light Box
 

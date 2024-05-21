@@ -41,13 +41,12 @@ function sitephoto_register_assets()
     wp_enqueue_style('select2-css', 'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css');
     wp_enqueue_script('select2-js', 'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js', array('jquery'), '', true);
     // Affichage des images suppplémentaires "charger plus" et filtres avec script AJAX
-    wp_enqueue_script('loadMoreAjax', get_template_directory_uri() . '/js/loadMoreAjax.js', array('jquery'), '1.0.0', true);
     wp_enqueue_script('miniature', get_template_directory_uri() . '/js/miniature.js', array('jquery'), '1.0.0', true);
-    // // Passer l'objet ajax_params au script
-    // wp_localize_script('loadMoreAjax', 'loadMoreAjax_js', 'ajax_params', array(
-    //     'ajax_url' => admin_url('admin-ajax.php'),
-    //     'nonce' => wp_create_nonce('loadMoreAjax'),
-    // ));
+    wp_enqueue_script('loadMoreAjax', get_template_directory_uri() . '/js/loadMoreAjax.js', array('jquery'), '1.0.0', true);
+    wp_localize_script('loadMoreAjax', 'loadMoreAjax_js', 'ajax_params', array(
+        'ajax_url' => admin_url('admin-ajax.php'),
+        //'nonce' => wp_create_nonce('loadMoreAjax'),
+    ));
 }
 
 add_action('wp_enqueue_scripts', 'sitephoto_register_assets');

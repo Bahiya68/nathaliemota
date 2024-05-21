@@ -132,9 +132,9 @@
                     $query->the_post();
 
             ?>
-            <div class="photo-block">
-                <?php get_template_part('/template-parts/photo'); ?>
-            </div>
+
+            <?php get_template_part('/template-parts/photo'); ?>
+
             <?php
                 endwhile;
                 wp_reset_postdata(); // Réinitialise la requête
