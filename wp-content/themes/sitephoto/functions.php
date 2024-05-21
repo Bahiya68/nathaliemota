@@ -45,7 +45,6 @@ function sitephoto_register_assets()
     wp_enqueue_script('loadMoreAjax', get_template_directory_uri() . '/js/loadMoreAjax.js', array('jquery'), '1.0.0', true);
     wp_localize_script('loadMoreAjax', 'loadMoreAjax_js', 'ajax_params', array(
         'ajax_url' => admin_url('admin-ajax.php'),
-        //'nonce' => wp_create_nonce('loadMoreAjax'),
     ));
 }
 
@@ -148,11 +147,11 @@ function my_photo_filter()
         while ($query->have_posts()) {
             $query->the_post();
 ?>
-            <div class="photo">
-                <?php if (has_post_thumbnail()) : ?>
-                    <?php get_template_part('template-parts/photo'); ?>
-                <?php endif; ?>
-            </div>
+<div class="photo">
+    <?php if (has_post_thumbnail()) : ?>
+    <?php get_template_part('template-parts/photo'); ?>
+    <?php endif; ?>
+</div>
 <?php
         }
         wp_reset_postdata();
