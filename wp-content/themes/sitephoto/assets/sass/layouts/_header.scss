@@ -1,6 +1,4 @@
-h1 {
-    //display:none;
-}
+
 .detailphoto {
     display: flex;
     flex-direction: column;
@@ -62,7 +60,7 @@ header {
                 list-style-type: none;
             
                 li {
-                    font-family: 'font-family', Space Mono;
+                    font-family: "Space Mono", monospace;
                     
                     a {
                         text-decoration: none;
@@ -82,7 +80,7 @@ header {
 
 
 #menu-item-14 {
-    font-family: 'font-family', Space Mono;
+    font-family: "Space Mono", monospace;
     font-size: 16px;
     cursor: pointer;
     background-color: white;

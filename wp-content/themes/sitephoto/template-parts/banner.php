@@ -15,8 +15,6 @@
     if ($query->have_posts()) {
         while ($query->have_posts()) {
             $query->the_post();
-
-
             echo '<img class="banner__background" src="';
             echo the_post_thumbnail_url();
             echo '" />';
@@ -25,5 +23,4 @@
     // réinitialisation de la requête
     wp_reset_postdata();
     ?>
-
 </div>

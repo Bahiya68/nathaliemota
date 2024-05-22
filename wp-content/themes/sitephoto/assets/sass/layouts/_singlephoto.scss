@@ -326,9 +326,13 @@ display: block;
     .boite img {
         max-width: 305px;
     }
+    .left {
+        bottom: 180px;
+   }
+   .right {
+        bottom: 180px;
+   }
 }
-    
-
 
 
 //******Light Box
@@ -450,11 +454,12 @@ display: block;
 }
  
 .left {
-     left:50px;
+    left:50px;
+    
 }
 
 .right {
-     right:50px;
+    right:50px;
 }
 
 #close {
