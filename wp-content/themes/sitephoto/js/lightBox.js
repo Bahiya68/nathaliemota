@@ -45,6 +45,7 @@ function initLightbox() {
   };
 
   const transitionSlidesLeft = () => {
+    if (typeof activeImage === "undefined") return;
     lightboxBtnLeft.focus();
     $(".lightbox-image").addClass("slideright");
     setTimeout(function () {
@@ -59,6 +60,7 @@ function initLightbox() {
   };
 
   const transitionSlidesRight = () => {
+    if (typeof activeImage === "undefined") return;
     lightboxBtnRight.focus();
     $(".lightbox-image").addClass("slideleft");
     setTimeout(function () {

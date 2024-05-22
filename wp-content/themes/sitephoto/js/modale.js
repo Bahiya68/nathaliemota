@@ -23,8 +23,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
     modal.style.display = "block";
 
     if (referenceInput) {
-      var refPhotoValue = document.querySelector(".ref-val").textContent;
-      if (refPhotoField) {
+      var refPhotoField = document.querySelector(
+        '.boiterefphoto input[type="text"]'
+      );
+      var refPhotoValue = document.querySelector(".ref-val")?.textContent;
+
+      if (refPhotoField && refPhotoValue) {
         refPhotoField.value = refPhotoValue;
       }
     }
@@ -49,10 +53,13 @@ document.addEventListener("DOMContentLoaded", (event) => {
     }
   };
 
-  // Préremplir le champ de référence de la photo
+  // Préremplir le champ de référence de la photo si nécessaire
   var refPhotoField = document.querySelector(
     '.boiterefphoto input[type="text"]'
   );
-  var refPhotoValue = document.querySelector(".ref-val").textContent;
-  refPhotoField.value = refPhotoValue;
+  var refPhotoValue = document.querySelector(".ref-val")?.textContent;
+
+  if (refPhotoField && refPhotoValue) {
+    refPhotoField.value = refPhotoValue;
+  }
 });
