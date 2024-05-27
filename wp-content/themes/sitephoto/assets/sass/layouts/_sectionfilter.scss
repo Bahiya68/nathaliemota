@@ -38,7 +38,6 @@
     z-index:5;
     @media screen and (max-width: 1080px) {
         height:auto;
-        
       }
  }
 
@@ -49,9 +48,13 @@
 }
  
 .filters {
-    margin-top: 20px;
+    //margin-bottom: 20px;
+    margin-top: 30px;
     width: 100%;
     padding: 30px;
+    @media screen and (max-width: 960px) {
+        margin-top: 60px;
+      }
     
     select {
         width: 100%;

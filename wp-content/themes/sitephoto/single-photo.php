@@ -25,8 +25,7 @@
             <p>ANNÉE : <?php echo get_the_date('Y'); ?></p>
         </div>
         <div class="photos-container">
-            <img class="Card-image " src="<?php echo get_the_post_thumbnail_url(); ?>"
-                alt="<?php echo get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true); ?>">
+            <img class="Card-image " src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php echo get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true); ?>">
         </div>
     </div>
 
@@ -39,12 +38,6 @@
     <!-- 2nd part dynamique -->
     <div class="section_post_contact_nav">
         <div class="part1">
-            <!-- <div class="avis">
-                <p>Cette photo vous intéresse ?</p>
-            </div class="avis">
-            <div>
-                <button id="myBtn">Contact</button>
-            </div> -->
         </div>
         <section class="contact-carrousel">
             <div class="contact-btn">
@@ -58,18 +51,14 @@
                 ?>
                 <div class="arrows">
                     <?php if ($prevPost) : ?>
-                    <a id="arrow-left" href="<?php echo get_the_permalink($previous) ?>">
-                        <img class="arrow arrow-gauche"
-                            src="<?= esc_url(get_stylesheet_directory_uri() . '/assets/images/flechegauche.svg'); ?>"
-                            alt="flechegauche">
-                    </a>
+                        <a id="arrow-left" href="<?php echo get_the_permalink($previous) ?>">
+                            <img class="arrow arrow-gauche" src="<?= esc_url(get_stylesheet_directory_uri() . '/assets/images/flechegauche.svg'); ?>" alt="flechegauche">
+                        </a>
                     <?php endif; ?>
                     <?php if ($nextPost) : ?>
-                    <a href="<?php echo get_the_permalink($next) ?>">
-                        <img id="arrow-right" class="arrow arrow-droite"
-                            src="<?= esc_url(get_stylesheet_directory_uri() . '/assets/images/flechedroite.svg'); ?>"
-                            alt="flechedroite">
-                    </a>
+                        <a href="<?php echo get_the_permalink($next) ?>">
+                            <img id="arrow-right" class="arrow arrow-droite" src="<?= esc_url(get_stylesheet_directory_uri() . '/assets/images/flechedroite.svg'); ?>" alt="flechedroite">
+                        </a>
                     <?php endif; ?>
                 </div>
 
@@ -79,10 +68,9 @@
                             $nextThumbnail = get_field("photo", $prevPost->ID);
                             $nextLink = get_permalink($prevPost);
                         ?>
-                        <a href="<?php echo get_the_permalink($prevPost) ?>">
-                            <img id="previous-image" class="previous-image"
-                                src="<?php echo get_the_post_thumbnail_url($prevPost) ?>" alt="Image précédente">
-                        </a>
+                            <a href="<?php echo get_the_permalink($prevPost) ?>">
+                                <img id="previous-image" class="previous-image" src="<?php echo get_the_post_thumbnail_url($prevPost) ?>" alt="Image précédente">
+                            </a>
                         <?php endif; ?>
 
                     </div>
@@ -91,10 +79,9 @@
                             $nextThumbnail = get_field("photo", $nextPost->ID);
                             $nextLink = get_permalink($nextPost);
                         ?>
-                        <a href="<?= esc_url(get_permalink($nextPost)); ?>">
-                            <img id="next-image" class="next-image"
-                                src="<?php echo get_the_post_thumbnail_url($nextPost) ?>" alt="Image suivante">
-                        </a>
+                            <a href="<?= esc_url(get_permalink($nextPost)); ?>">
+                                <img id="next-image" class="next-image" src="<?php echo get_the_post_thumbnail_url($nextPost) ?>" alt="Image suivante">
+                            </a>
 
                         <?php endif; ?>
                     </div>
@@ -133,7 +120,7 @@
 
             ?>
 
-            <?php get_template_part('/template-parts/photo'); ?>
+                    <?php get_template_part('/template-parts/photo'); ?>
 
             <?php
                 endwhile;

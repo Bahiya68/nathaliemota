@@ -7,7 +7,6 @@ global $wp_query; ?>
 </section>
 
 <div class="gallery-container">
-
     <?php
     $args = array(
         'order'          => 'ASC',
@@ -15,7 +14,6 @@ global $wp_query; ?>
         'posts_per_page' => 8,
         'paged'          => 1,
     );
-
     $ajaxphoto = new WP_Query($args);
 
     if ($ajaxphoto->have_posts()) :
@@ -30,7 +28,6 @@ global $wp_query; ?>
         echo 'Aucune photo trouvée.';
     endif;
     ?>
-
 </div>
 <section id="no-more-photos" style="display: none;">
     <p>Aucune photo</p>

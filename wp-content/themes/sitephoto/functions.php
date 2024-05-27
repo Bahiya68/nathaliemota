@@ -64,14 +64,12 @@ function charger_plus_de_photos()
     } else {
         $offset = 0;
     }
-
     $args = array(
         'order'          => 'ASC',
         'post_type'      => 'photo',
         'posts_per_page' => 8,
         'paged'          => $offset + 1,
     );
-
     $ajaxphoto = new WP_Query($args);
 
     ob_start();

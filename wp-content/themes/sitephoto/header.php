@@ -27,11 +27,12 @@
                         <span></span>
                     </div>
                     <?php
+                    // Fonction pour le menu header
                     wp_nav_menu(
                         array(
                             'theme_location' => 'mainmenu',
-                            'container' => 'false', // On retire le conteneur généré par WP
-                            'menu_class' => 'navMenu', // ma classe personnalisée 
+                            'container' => 'false',
+                            'menu_class' => 'navMenu', 
                         )
                     );
                     ?>
