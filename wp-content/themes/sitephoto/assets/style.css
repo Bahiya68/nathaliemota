@@ -264,44 +264,56 @@ footer {
   font-display: swap;
 }
 @font-face {
-  font-family: "Space Mono", monospace;
+  font-family: "SpaceBold", monospace;
   src: url("../assets/fonts/SpaceMono-Bold.woff") format("woff"), url("../assets/fonts/SpaceMono-Bold.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Space Mono", monospace;
+  font-family: "SpaceBoldItalic", monospace;
   src: url("../assets/fonts/SpaceMono-BoldItalic.woff") format("woff"), url("../assets/fonts/SpaceMono-BoldItalic.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Space Mono", monospace;
+  font-family: "SpaceItalic", monospace;
   src: url("../assets/fonts/SpaceMono-Italic.woff") format("woff"), url("../assets/fonts/SpaceMono-Italic.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Space Mono", monospace;
+  font-family: "SpaceRegular", monospace;
   src: url("../assets/fonts/SpaceMono-Regular.woff") format("woff"), url("../assets/fonts/SpaceMono-Regular.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 .info {
+  width: 49%;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  font-family: "font-family", "Space Mono";
+  font-family: "SpaceRegular", monospace;
   font-weight: 400;
+  border-bottom: solid 1px;
+}
+@media (max-width: 960px) {
+  .info {
+    margin-top: 20px;
+    width: 100%;
+  }
 }
 .info h2 {
+  width: 50%;
   font-size: 66px;
   line-height: 58px;
   font-style: italic;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin: 0;
 }
 .info p {
   font-size: 14px;
@@ -316,7 +328,7 @@ a:-webkit-any-link {
 }
 
 .photos-container {
-  width: 50%;
+  width: 49%;
 }
 @media (max-width: 1024px) {
   .photos-container {
@@ -331,6 +343,7 @@ a:-webkit-any-link {
 }
 
 .photodetail {
+  margin-top: 30px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -365,7 +378,6 @@ a:-webkit-any-link {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  border-top: solid 1px;
   border-bottom: solid 1px;
   align-items: center;
   flex-wrap: wrap;
@@ -395,7 +407,6 @@ a:-webkit-any-link {
   height: 118px;
   width: 100%;
   justify-content: space-between;
-  border-bottom: 2px solid black;
 }
 @media screen and (max-width: 600px) {
   .contact-carrousel {
@@ -492,6 +503,15 @@ a:-webkit-any-link {
 
 .avis {
   display: flex;
+}
+
+.autrechoix h3 {
+  font-family: "SpaceRegular", monospace;
+  size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .photo-overlay {

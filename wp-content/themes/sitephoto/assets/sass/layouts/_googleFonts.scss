@@ -43,7 +43,7 @@
 
 //******Police Mono Space
 @font-face {
-    font-family: "Space Mono", monospace;
+    font-family: "SpaceBold", monospace;
     src: url('../assets/fonts/SpaceMono-Bold.woff') format('woff'),
          url('../assets/fonts/SpaceMono-Bold.woff2') format('woff2');
     font-weight: normal;
@@ -52,7 +52,7 @@
 }
 
 @font-face {
-    font-family: "Space Mono", monospace;
+    font-family: "SpaceBoldItalic", monospace;
     src: url('../assets/fonts/SpaceMono-BoldItalic.woff') format('woff'),
          url('../assets/fonts/SpaceMono-BoldItalic.woff2') format('woff2');
     font-weight: normal;
@@ -60,7 +60,7 @@
     font-display: swap;
 }
 @font-face {
-    font-family: "Space Mono", monospace;
+    font-family: "SpaceItalic", monospace;
     src: url('../assets/fonts/SpaceMono-Italic.woff') format('woff'),
          url('../assets/fonts/SpaceMono-Italic.woff2') format('woff2');
     font-weight: normal;
@@ -69,7 +69,7 @@
 }
 
 @font-face {
-    font-family: "Space Mono", monospace;
+    font-family: "SpaceRegular", monospace;
     src: url('../assets/fonts/SpaceMono-Regular.woff') format('woff'),
          url('../assets/fonts/SpaceMono-Regular.woff2') format('woff2');
     font-weight: normal;
